@@ -8,7 +8,7 @@ public class Fixed_DragRigidbody2D : MonoBehaviour
     public float drag = 1.0f;
     public float angularDrag = 5.0f;
 
-    private TargetJoint2D fixedJoint;
+	public TargetJoint2D fixedJoint;
 
     void Update()
     {
@@ -35,10 +35,8 @@ public class Fixed_DragRigidbody2D : MonoBehaviour
         {
             if (!fixedJoint)
             {
-                GameObject obj = new GameObject("Rigidbody2D dragger");
-                Rigidbody2D body = obj.AddComponent<Rigidbody2D>() as Rigidbody2D;
+				GameObject obj = GameObject.FindWithTag("Karagöz");
                 this.fixedJoint = obj.AddComponent<TargetJoint2D>() as TargetJoint2D;
-                body.isKinematic = true;
             }
         }
 

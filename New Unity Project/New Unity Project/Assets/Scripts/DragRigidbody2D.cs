@@ -5,7 +5,7 @@ public class DragRigidbody2D : MonoBehaviour
 {
     public float distance = 0.5f;
     public float damper = 1.0f; 
-    public float frequency = 1000000.0f;
+    public float frequency = 1.0f;
     public float drag = 1.0f;
     public float angularDrag = 5.0f;
 
