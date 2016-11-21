@@ -46,11 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DragRigidbody2D.cs" />
-     <Compile Include="Assets\Scripts\Fixed_DragRigidbody2D.cs" />
-     <Compile Include="Assets\Scripts\MouseController.cs" />
-     <Compile Include="Assets\Scripts\drag.cs" />
+     <Compile Include="Assets\Scripts\ScrollWheelRotate.cs" />
      <Compile Include="Assets\Scripts\grenze.cs" />
-     <Compile Include="Assets\Scripts\targetJ.cs" />
+     <Compile Include="Assets\Scripts\mausradDreh.cs" />
+     <Compile Include="Assets\Scripts\rotate.cs" />
+     <Compile Include="Assets\Scripts\ziehenController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
