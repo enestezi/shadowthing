@@ -955,8 +955,8 @@ GameObject:
   - 92: {fileID: 1795678735}
   - 124: {fileID: 1795678734}
   - 81: {fileID: 1795678733}
-  - 114: {fileID: 1795678739}
   - 114: {fileID: 1795678738}
+  - 114: {fileID: 1795678739}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1056,6 +1056,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mausradDrehung: 0
+  mausradWert: 0
+  mausradGeschwindigkeit: 50
+  mausrad: 0
+  mausradSmoother: 2
 --- !u!1 &2111237488
 GameObject:
   m_ObjectHideFlags: 0
