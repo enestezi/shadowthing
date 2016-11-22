@@ -101,9 +101,7 @@ GameObject:
   - 212: {fileID: 8520025}
   - 50: {fileID: 8520027}
   - 58: {fileID: 8520026}
-  - 114: {fileID: 8520028}
   - 60: {fileID: 8520030}
-  - 114: {fileID: 8520029}
   m_Layer: 8
   m_Name: oberKoerper
   m_TagString: interakiv1
@@ -189,29 +187,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &8520028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8520023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62acce0aaa76f214799dd2c2e127376c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbodyDreh: 0
---- !u!114 &8520029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8520023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97a566297079e0a4595f25554bbde6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &8520030
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -980,6 +955,8 @@ GameObject:
   - 92: {fileID: 1795678735}
   - 124: {fileID: 1795678734}
   - 81: {fileID: 1795678733}
+  - 114: {fileID: 1795678739}
+  - 114: {fileID: 1795678738}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1055,6 +1032,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1795678738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1795678732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62acce0aaa76f214799dd2c2e127376c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbodyDreh: 0
+--- !u!114 &1795678739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1795678732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a566297079e0a4595f25554bbde6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mausradDrehung: 0
 --- !u!1 &2111237488
 GameObject:
   m_ObjectHideFlags: 0
