@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/mausradDreh.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScrollRectSnap_CS.cs">
     <Files>
-      <File FileName="Assets/Scripts/mausradDreh.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ziehenController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ReSkinAnimation.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/ScrollRectSnap_CS.cs" Line="69" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
