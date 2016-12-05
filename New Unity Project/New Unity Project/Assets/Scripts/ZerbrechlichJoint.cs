@@ -20,8 +20,8 @@ public class ZerbrechlichJoint : MonoBehaviour {
 		joint = interaktiv1.GetComponent<FixedJoint2D> ();
 
 		joint.autoConfigureConnectedAnchor = true;
-		//joint.breakForce = 3000;
-		//joint.breakTorque = 3000;
+		joint.breakForce = 3000;
+		joint.breakTorque = 3000;
 
 		lagerAnchor = joint.anchor;
 

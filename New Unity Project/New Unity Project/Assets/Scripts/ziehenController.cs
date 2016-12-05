@@ -10,6 +10,7 @@ public class ZiehenController : MonoBehaviour {
 	public bool rigidbodyDreh; // why lil buggy???---
 
 	private Rigidbody2D rb_interaktiv1;
+	private TargetJoint2D tj_interaktiv1;
 
 	void Start ()
 	{
@@ -26,6 +27,8 @@ public class ZiehenController : MonoBehaviour {
 
 		if (interaktiv1.GetComponent<TargetJoint2D>() == null)
 			interaktiv1.AddComponent<TargetJoint2D>();
+
+		tj_interaktiv1 = rb_interaktiv1.GetComponent<TargetJoint2D> ();
 	}
 		
 	void Update ()
@@ -48,7 +51,7 @@ public class ZiehenController : MonoBehaviour {
 	public void Drag ()
 	{
 		pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		interaktiv1.GetComponent<TargetJoint2D> ().target = pos;
+		tj_interaktiv1.target = pos;
 	}
 	
 

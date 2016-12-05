@@ -21,10 +21,11 @@ public class MausradDreh : MonoBehaviour
 	}
 	void FixedUpdate ()
 	{
+		Debug.Log("mausradwert" + mausradWert);
 		mausrad = Input.GetAxis ("Mouse ScrollWheel");
 		if (mausrad != 0.0f) {
 			mausradWert -= mausrad * mausradGeschwindigkeit;
-			mausradWert = Mathf.Clamp (mausradWert, -50.0F, 50F);
+			mausradWert = Mathf.Clamp (mausradWert, -100.0F, 100F);
 		}
 
 		if (mausrad == 0.0f) {
