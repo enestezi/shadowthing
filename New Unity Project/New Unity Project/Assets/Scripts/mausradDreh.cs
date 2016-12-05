@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class mausradDreh : MonoBehaviour
+public class MausradDreh : MonoBehaviour
 {
 	public float mausradDrehung;        //stores the rotation of the mouse wheel
 	public float mausradWert;

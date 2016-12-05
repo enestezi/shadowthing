@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - "Karag\xF6z"
+  - reSkin
   - interakiv1
+  - zerbrechlichJoint
+  - interakiv2
   layers:
   - Default
   - TransparentFX
