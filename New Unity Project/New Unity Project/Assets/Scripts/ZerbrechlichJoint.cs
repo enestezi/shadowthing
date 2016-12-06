@@ -17,14 +17,17 @@ public class ZerbrechlichJoint : MonoBehaviour {
 	void Start () 
 	{
 		interaktiv1 = GameObject.FindWithTag ("interakiv1");
-		joint = interaktiv1.GetComponent<FixedJoint2D> ();
 
-		joint.autoConfigureConnectedAnchor = true;
-		joint.breakForce = 3000;
-		joint.breakTorque = 3000;
+		if (interaktiv1.GetComponent<FixedJoint2D> () != null) 
+		{
+			joint = interaktiv1.GetComponent<FixedJoint2D> ();
+			joint.autoConfigureConnectedAnchor = true;
+			joint.breakForce = 3000;
+			joint.breakTorque = 3000;
 
-		lagerAnchor = joint.anchor;
-
+			lagerAnchor = joint.anchor;
+		}
+			
 		zerbrechlich = GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
 
 
@@ -40,7 +43,11 @@ public class ZerbrechlichJoint : MonoBehaviour {
 
 	void Update () 
 	{
-		angle = zerbrechlich.GetComponent<HingeJoint2D> ().jointAngle;
+		if (zerbrechlich) 
+		{
+			angle = zerbrechlich.GetComponent<HingeJoint2D> ().jointAngle;
+		}
+
 		if (kaputt) 
 		{
 			if (angle <= 0) 

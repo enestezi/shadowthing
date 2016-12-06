@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScrollRectSnap_CS.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TastaturController.cs">
     <Files>
-      <File FileName="Assets/Scripts/ziehenController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ReSkinAnimation.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/ScrollRectSnap_CS.cs" Line="69" Column="52" />
+      <File FileName="Assets/Scripts/TastaturController.cs" Line="22" Column="30" />
+      <File FileName="Assets/Scripts/ZiehenController.cs" Line="54" Column="17" />
+      <File FileName="Assets/Scripts/ZerbrechlichJoint.cs" Line="36" Column="15" />
+      <File FileName="Assets/Scripts/MausradDreh.cs" Line="28" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

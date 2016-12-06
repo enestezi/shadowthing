@@ -7,21 +7,48 @@ public class MausradDreh : MonoBehaviour
 	public float mausradWert;
 	public float mausradGeschwindigkeit = 50.0f;
 	public float mausrad;
-	public float mausradSmoother = 2.0f;
+	public float mausradSmoother = 1.0f;
 	private float geschwindigkeit = 10000.0f;      //multiplier for the mouse wheel input
 	private Vector3 objPos;
 
-	private GameObject interaktiv1Dreh;
-	private Rigidbody2D interaktiv1Rigid;
+	private GameObject[] interaktiv1Dreh;
+	private Rigidbody2D[] rb_interaktiv1Dreh;
 
+	public bool rigidbodyDreh; // why lil buggy???---
 	void Start ()
 	{
-		interaktiv1Dreh = GameObject.FindWithTag ("interakiv1");
-		interaktiv1Rigid = interaktiv1Dreh.GetComponent<Rigidbody2D> ();
+		interaktiv1Dreh = GameObject.FindGameObjectsWithTag ("interakiv1"); // must made with findgameobjectswithtag
+		rb_interaktiv1Dreh = new Rigidbody2D[interaktiv1Dreh.Length];
+		for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+		{
+			rb_interaktiv1Dreh [i] = interaktiv1Dreh[i].GetComponent<Rigidbody2D> ();
+		}
+
+		rigidbodyDreh = false;
 	}
 	void FixedUpdate ()
 	{
-		Debug.Log("mausradwert" + mausradWert);
+		if (Input.GetMouseButton (1)) 
+		{
+			if (!rigidbodyDreh) 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh[i].freezeRotation = true;
+				}
+				rigidbodyDreh = true;
+			} 
+			else 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh[i].freezeRotation = false;
+				}
+				rigidbodyDreh = false;
+			}
+		}
+
+
 		mausrad = Input.GetAxis ("Mouse ScrollWheel");
 		if (mausrad != 0.0f) {
 			mausradWert -= mausrad * mausradGeschwindigkeit;
@@ -36,13 +63,24 @@ public class MausradDreh : MonoBehaviour
 
 		if (mausradDrehung != 0)
 		{
-			interaktiv1Rigid.freezeRotation = false;
-
-			if (mausradDrehung > 0) {
-				interaktiv1Rigid.AddTorque(mausradDrehung * geschwindigkeit);
+			for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+			{
+				rb_interaktiv1Dreh[i].freezeRotation = false;
 			}
-			if (mausradDrehung < 0) {
-				interaktiv1Rigid.AddTorque(mausradDrehung * geschwindigkeit);
+
+			if (mausradDrehung > 0) 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh [i].AddTorque (mausradDrehung * geschwindigkeit);
+				}
+			}
+			if (mausradDrehung < 0) 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh [i].AddTorque (mausradDrehung * geschwindigkeit);
+				}
 			}
 		}
 

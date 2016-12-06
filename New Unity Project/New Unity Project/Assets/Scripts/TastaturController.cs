@@ -13,7 +13,9 @@ public class TastaturController : MonoBehaviour {
 	void Start()
 	{
 		interaktiv2 = GameObject.FindWithTag ("interakiv2");
-		rb_interaktiv2 = interaktiv2.GetComponent<Rigidbody2D>();
+		if (interaktiv2 != null) {
+			rb_interaktiv2 = interaktiv2.GetComponent<Rigidbody2D> ();
+		}
 	}
 
 	void FixedUpdate()
@@ -27,7 +29,8 @@ public class TastaturController : MonoBehaviour {
 
 		Vector2 movement = new Vector2 (moveHorizontal * speed, moveVertical * speed);
 
-
-		rb_interaktiv2.velocity = movement;
+		if (interaktiv2 != null) {
+			rb_interaktiv2.velocity = movement;
+		}
 	}
 }
