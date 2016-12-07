@@ -9,41 +9,49 @@ public class MausradDreh : MonoBehaviour
 	public float mausrad;
 	public float mausradSmoother = 1.0f;
 	private float geschwindigkeit = 10000.0f;      //multiplier for the mouse wheel input
+	private Vector3 objPos;
+
+	private GameObject[] interaktiv1Dreh;
+	private Rigidbody2D[] rb_interaktiv1Dreh;
 
 	public bool rigidbodyDreh; // why lil buggy???---
-
-
-	private Rigidbody2D rb_Lager; //warum muss es so sein :(
 	void Start ()
 	{
+		interaktiv1Dreh = GameObject.FindGameObjectsWithTag ("interakiv1"); // must made with findgameobjectswithtag
+		rb_interaktiv1Dreh = new Rigidbody2D[interaktiv1Dreh.Length];
+		for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+		{
+			rb_interaktiv1Dreh [i] = interaktiv1Dreh[i].GetComponent<Rigidbody2D> ();
+		}
+
 		rigidbodyDreh = false;
 	}
-
-	bool wasClicked;
-
-	void Update ()
-	{
-		if (rb_Lager == null)
-			return;
-		if (Input.GetMouseButton (1)) 
-		{
-			if (wasClicked)
-				return;
-			rigidbodyDreh = !rigidbodyDreh;
-			rb_Lager.freezeRotation = rigidbodyDreh;
-			wasClicked = true;
-		} else 
-		{
-			wasClicked = false;
-		}
-	}
-
 	void FixedUpdate ()
 	{
-		mausrad = Input.GetAxis ("Mouse ScrollWheel");
+		if (Input.GetMouseButton (1)) 
+		{
+			if (!rigidbodyDreh) 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh[i].freezeRotation = true;
+				}
+				rigidbodyDreh = true;
+			} 
+			else 
+			{
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh[i].freezeRotation = false;
+				}
+				rigidbodyDreh = false;
+			}
+		}
 
+
+		mausrad = Input.GetAxis ("Mouse ScrollWheel");
 		if (mausrad != 0.0f) {
-			mausradWert =- mausrad * mausradGeschwindigkeit;
+			mausradWert -= mausrad * mausradGeschwindigkeit;
 			mausradWert = Mathf.Clamp (mausradWert, -100.0F, 100F);
 		}
 
@@ -53,28 +61,28 @@ public class MausradDreh : MonoBehaviour
 
 		mausradDrehung = Mathf.Lerp (0.0F, mausradWert, mausradSmoother * Time.deltaTime);
 
-
-		if (mausradDrehung != 0 && rb_Lager != null)
+		if (mausradDrehung != 0)
 		{
-			bool tmp = rb_Lager.freezeRotation;
-			rb_Lager.freezeRotation = false;
+			for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+			{
+				rb_interaktiv1Dreh[i].freezeRotation = false;
+			}
 
 			if (mausradDrehung > 0) 
 			{
-				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh [i].AddTorque (mausradDrehung * geschwindigkeit);
+				}
 			}
-
 			if (mausradDrehung < 0) 
 			{
-				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
+				for (int i = 0; i < interaktiv1Dreh.Length; ++i) 
+				{
+					rb_interaktiv1Dreh [i].AddTorque (mausradDrehung * geschwindigkeit);
+				}
 			}
-			rb_Lager.freezeRotation = tmp;
 		}
-	}
-
-	public void Rb_holen (Rigidbody2D rb_geklickt)
-	{
-		rb_Lager = rb_geklickt;
 
 	}
 }

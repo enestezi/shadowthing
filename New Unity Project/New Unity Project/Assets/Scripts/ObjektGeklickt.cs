@@ -3,32 +3,29 @@ using System.Collections;
 
 public class ObjektGeklickt : MonoBehaviour {
 
-	private GameObject manager;
-
-	private MausZiehen mausZiehen;
-	private MausradDreh mausradDreh;
-
-	public TargetJoint2D tj_geklickt;
-	public Rigidbody2D rb_geklickt;
-
-	public static GameObject lastClickedObject;
+	private ZiehenController drag;
 
 	void Start ()
 	{
-		manager = GameObject.FindWithTag ("MainCamera");
-		mausZiehen = manager.GetComponent<MausZiehen> ();
-		mausradDreh = manager.GetComponent<MausradDreh> ();
-
-		tj_geklickt = gameObject.GetComponent<TargetJoint2D> ();
-		rb_geklickt = gameObject.GetComponent<Rigidbody2D> ();
+		drag = FindObjectOfType<ZiehenController>();
 	}
-		
+
+	void OnMouseDown ()
+	{
+		drag.ZuletztGeklickt();
+	}
+
+	void OnMouseUp ()
+	{
+		drag.tj_zuletztGeklickt = null;
+	}
+
 	void OnMouseDrag ()
 	{
-		mausradDreh.Rb_holen(rb_geklickt);
-		mausZiehen.Ziehen(tj_geklickt);
-
-		ObjektGeklickt.lastClickedObject = this.gameObject;
+		if (drag.tj_zuletztGeklickt != null) 
+		{
+			drag.pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			drag.tj_zuletztGeklickt.target = drag.pos;
+		}
 	}
-
 }

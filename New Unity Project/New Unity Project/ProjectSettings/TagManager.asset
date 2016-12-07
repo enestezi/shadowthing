@@ -8,7 +8,6 @@ TagManager:
   - interakiv1
   - zerbrechlichJoint
   - interakiv2
-  - manager
   layers:
   - Default
   - TransparentFX
