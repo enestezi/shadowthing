@@ -3,34 +3,37 @@ using System.Collections;
 
 public class ZerbrechlichJoint : MonoBehaviour {
 
-	private Vector2 lagerAnchor;
+
 
 	private GameObject interaktiv1;
-	private FixedJoint2D joint;
 
 	private GameObject zerbrechlich;
+	public InteraktivManager manager;
+
 	public float angle;
-
-
 	public bool kaputt;
+
+	public FixedJoint2D joint;
+	public Vector2 lagerAnchor;
 
 	void Start () 
 	{
 		interaktiv1 = GameObject.FindWithTag ("interakiv1");
+		 
+		manager = InteraktivManager.Instance;
+			
+		zerbrechlich = gameObject.GetComponentInParent<Puppe> ().zerbrechlich; //GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
 
 		if (interaktiv1.GetComponent<FixedJoint2D> () != null) 
 		{
 			joint = interaktiv1.GetComponent<FixedJoint2D> ();
 			joint.autoConfigureConnectedAnchor = true;
-			joint.breakForce = 3000;
-			joint.breakTorque = 3000;
+			joint.breakForce = 2000;
+			joint.breakTorque = 2000;
 
 			lagerAnchor = joint.anchor;
+
 		}
-			
-		zerbrechlich = GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
-
-
 		kaputt = false;
 	}
 

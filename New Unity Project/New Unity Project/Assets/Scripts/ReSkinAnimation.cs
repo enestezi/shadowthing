@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using System;
 
-public class ReSkinAnimation : MonoBehaviour {
+public class ReSkinAnimation : MonoBehaviour 
+{
+	void OnEnable()
+	{
+		EventManager.Instance.RegistriereEventListener ("AUSSEHEN", AussehenListener); //das ist delegate so kann man das machen
+	}
+
+	void OnDisable()
+	{
+		EventManager.Instance.EntferneEventListener ("AUSSEHEN", AussehenListener); 
+	}
 
 	public string spriteGruppe;
 
@@ -16,6 +26,13 @@ public class ReSkinAnimation : MonoBehaviour {
 
 			if (newSprite)
 				renderer.sprite = newSprite;
+		}
+	}
+
+	void AussehenListener(string eventName, string parameter = "")
+	{
+		if (eventName == "Wechsel") {
+			spriteGruppe = parameter;
 		}
 	}
 }

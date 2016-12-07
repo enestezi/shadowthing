@@ -45,13 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Puppe.cs" />
+     <Compile Include="Assets\Scripts\EventManager.cs" />
+     <Compile Include="Assets\Scripts\InteraktivManager.cs" />
+     <Compile Include="Assets\Scripts\MausZiehen.cs" />
      <Compile Include="Assets\Scripts\MausradDreh.cs" />
      <Compile Include="Assets\Scripts\ObjektGeklickt.cs" />
      <Compile Include="Assets\Scripts\ReSkinAnimation.cs" />
      <Compile Include="Assets\Scripts\ScrollRectSnap_CS.cs" />
      <Compile Include="Assets\Scripts\TastaturController.cs" />
      <Compile Include="Assets\Scripts\ZerbrechlichJoint.cs" />
-     <Compile Include="Assets\Scripts\ZiehenController.cs" />
      <Compile Include="Assets\Scripts\grenze.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
