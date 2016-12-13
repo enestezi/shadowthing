@@ -3,6 +3,18 @@ using System.Collections;
 
 public class InteraktivManager  
 {
+	private GameObject[] interaktiv1;
+	private GameObject[] reSkin;
+
+	private TargetJoint2D[] tj_interaktiv1;
+
+	private ObjektGeklickt[] geklickt;
+	private ReSkinAnimation[] reskin;
+	private Interaktiv1Parent[] interaktiv1Parent;
+
+	public FixedJoint2D fj_interaktiv1;
+	public Vector2 anchorLager;
+
 	private static InteraktivManager instance;
 	public static InteraktivManager Instance
 	{
@@ -12,18 +24,6 @@ public class InteraktivManager
 			return instance;
 		}
 	}
-
-	private GameObject[] interaktiv1;
-	private GameObject[] reSkin;
-
-
-	private TargetJoint2D[] tj_interaktiv1;
-
-	private ObjektGeklickt[] geklickt;
-	private ReSkinAnimation[] reskin;
-
-
-
 
 	public InteraktivManager()
 	{
@@ -50,12 +50,25 @@ public class InteraktivManager
 		// alle reSkin Objekte sind vorbereitet
 		reSkin = GameObject.FindGameObjectsWithTag ("reSkin");
 		reskin = new ReSkinAnimation[reSkin.Length];
+		interaktiv1Parent = new Interaktiv1Parent[reSkin.Length];
 
 		for (int i = 0; i < reSkin.Length; ++i) 
 		{
-			if (interaktiv1 [i].GetComponent<ReSkinAnimation> () == null) 
+			if (reSkin [i].GetComponent<ReSkinAnimation> () == null) 
 			{
 				reskin [i] = reSkin [i].AddComponent<ReSkinAnimation> ();
+			}
+
+			if (reSkin [i].GetComponentInChildren<FixedJoint2D> () != null)
+			{
+				interaktiv1Parent [i] = reSkin [i].AddComponent<Interaktiv1Parent> ();
+
+				fj_interaktiv1 = reSkin [i].GetComponentInChildren<FixedJoint2D> ();
+				fj_interaktiv1.autoConfigureConnectedAnchor = true;
+				fj_interaktiv1.breakForce = 2000;
+				fj_interaktiv1.breakTorque = 2000;
+
+				anchorLager = fj_interaktiv1.anchor; // anchor lagern um fixed joint von der stelle wieder zu erstellen
 			}
 		}
 	}

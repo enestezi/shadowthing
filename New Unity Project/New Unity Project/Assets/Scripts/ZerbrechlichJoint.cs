@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ZerbrechlichJoint : MonoBehaviour {
 
-
-
-	private GameObject interaktiv1;
+	public GameObject[] interaktiv1;
+	public GameObject interaktiv1FJ; //um Objekt zu lagern, das fixedjoint hat 
+	public FixedJoint2D neu_fj_interaktiv1;
 
 	private GameObject zerbrechlich;
 	public InteraktivManager manager;
@@ -13,26 +13,20 @@ public class ZerbrechlichJoint : MonoBehaviour {
 	public float angle;
 	public bool kaputt;
 
-	public FixedJoint2D joint;
-	public Vector2 lagerAnchor;
-
 	void Start () 
-	{
-		interaktiv1 = GameObject.FindWithTag ("interakiv1");
-		 
+	{	 
 		manager = InteraktivManager.Instance;
 			
-		zerbrechlich = gameObject.GetComponentInParent<Puppe> ().zerbrechlich; //GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
+		zerbrechlich = gameObject.GetComponentInParent<Interaktiv1Parent> ().zerbrechlich; //GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
 
-		if (interaktiv1.GetComponent<FixedJoint2D> () != null) 
+		interaktiv1 = GameObject.FindGameObjectsWithTag ("interakiv1"); 
+
+		for (int i = 0; i < interaktiv1.Length; ++i) 
 		{
-			joint = interaktiv1.GetComponent<FixedJoint2D> ();
-			joint.autoConfigureConnectedAnchor = true;
-			joint.breakForce = 2000;
-			joint.breakTorque = 2000;
-
-			lagerAnchor = joint.anchor;
-
+			if (interaktiv1[i].GetComponent<FixedJoint2D> () != null) 
+			{
+				interaktiv1FJ = interaktiv1 [i];
+			}
 		}
 		kaputt = false;
 	}
@@ -55,15 +49,15 @@ public class ZerbrechlichJoint : MonoBehaviour {
 		{
 			if (angle <= 0) 
 			{
-				interaktiv1.AddComponent<FixedJoint2D> ();
-				joint = interaktiv1.GetComponent<FixedJoint2D> ();
+				interaktiv1FJ.AddComponent<FixedJoint2D> ();
+				neu_fj_interaktiv1 = interaktiv1FJ.GetComponent<FixedJoint2D> ();
 
-				joint.connectedBody = zerbrechlich.GetComponent<Rigidbody2D>();
-				joint.autoConfigureConnectedAnchor = true;
-				joint.breakForce = 3000;
-				joint.breakTorque = 3000;
+				neu_fj_interaktiv1.connectedBody = zerbrechlich.GetComponent<Rigidbody2D>();
+				neu_fj_interaktiv1.autoConfigureConnectedAnchor = true;
+				neu_fj_interaktiv1.breakForce = 2000;
+				neu_fj_interaktiv1.breakTorque = 2000;
 
-				joint.anchor = lagerAnchor;
+				neu_fj_interaktiv1.anchor = manager.anchorLager;
 
 				kaputt = false;
 			}

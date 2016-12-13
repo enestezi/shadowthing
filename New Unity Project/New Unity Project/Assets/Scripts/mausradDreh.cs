@@ -17,6 +17,10 @@ public class MausradDreh : MonoBehaviour
 	void Start ()
 	{
 		rigidbodyDreh = false;
+//		if (rb_Lager != null) 
+//		{
+//			rb_Lager.freezeRotation = true;
+//		}
 	}
 
 	bool wasClicked;
@@ -45,10 +49,18 @@ public class MausradDreh : MonoBehaviour
 		if (mausrad != 0.0f) {
 			mausradWert =- mausrad * mausradGeschwindigkeit;
 			mausradWert = Mathf.Clamp (mausradWert, -100.0F, 100F);
+//			if (rb_Lager != null) 
+//			{
+//				rb_Lager.freezeRotation = false;
+//			}
 		}
 
 		if (mausrad == 0.0f) {
 			mausradWert = 0;
+//			if (rb_Lager != null) 
+//			{
+//				rb_Lager.freezeRotation = true;
+//			}
 		}
 
 		mausradDrehung = Mathf.Lerp (0.0F, mausradWert, mausradSmoother * Time.deltaTime);
@@ -56,19 +68,21 @@ public class MausradDreh : MonoBehaviour
 
 		if (mausradDrehung != 0 && rb_Lager != null)
 		{
-			bool tmp = rb_Lager.freezeRotation;
-			rb_Lager.freezeRotation = false;
-
+			//bool tmp = rb_Lager.freezeRotation;
+			if(rb_Lager.angularVelocity == 0)
+				rb_Lager.freezeRotation = true;
+			
 			if (mausradDrehung > 0) 
 			{
 				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
+
 			}
 
 			if (mausradDrehung < 0) 
 			{
 				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
 			}
-			rb_Lager.freezeRotation = tmp;
+			//rb_Lager.freezeRotation = tmp;
 		}
 	}
 
