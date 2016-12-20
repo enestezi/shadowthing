@@ -1,46 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+// Script für Rigidbody2D-Rotation durch Scroll und Freigabe des Dreh durch Rechtsklick
 public class MausradDreh : MonoBehaviour
 {
-	public float mausradDrehung;        //stores the rotation of the mouse wheel
-	public float mausradWert;
-	public float mausradGeschwindigkeit = 50.0f;
-	public float mausrad;
-	public float mausradSmoother = 1.0f;
-	private float geschwindigkeit = 10000.0f;      //multiplier for the mouse wheel input
+	public float mausradDrehung;       				//stores the rotation of the mouse wheel
+	public float mausradWert;						//das Wert, das später Drehfunktion weitergegeben wird
+	public float mausradGeschwindigkeit = 50f;		//Erhöht das scroll-input
+	public float mausrad;							// scroll-input
+	public float mausradSmoother = 1f;				// erhöhung Wert in Lerp-Funktion in Time.deltaTime
+	public float geschwindigkeit = 300.0f;      	// dreh geschwindigkeit 
 
-	public bool rigidbodyDreh; // why lil buggy???---
-
-
-	private Rigidbody2D rb_Lager; //warum muss es so sein :(
-	void Start ()
-	{
-		rigidbodyDreh = false;
-//		if (rb_Lager != null) 
-//		{
-//			rb_Lager.freezeRotation = true;
-//		}
-	}
-
-	bool wasClicked;
-
-	void Update ()
-	{
-		if (rb_Lager == null)
-			return;
-		if (Input.GetMouseButton (1)) 
-		{
-			if (wasClicked)
-				return;
-			rigidbodyDreh = !rigidbodyDreh;
-			rb_Lager.freezeRotation = rigidbodyDreh;
-			wasClicked = true;
-		} else 
-		{
-			wasClicked = false;
-		}
-	}
+	private Rigidbody2D rb_Lager; 					// Lager für Rigidbody2D, das von ObjektGeklickt script kommt 
 
 	void FixedUpdate ()
 	{
@@ -48,47 +20,46 @@ public class MausradDreh : MonoBehaviour
 
 		if (mausrad != 0.0f) {
 			mausradWert =- mausrad * mausradGeschwindigkeit;
+			//mausradWert = Mathf.Lerp (0.0F, mausradWert,mausradSmoother*Time.deltaTime);
 			mausradWert = Mathf.Clamp (mausradWert, -100.0F, 100F);
-//			if (rb_Lager != null) 
-//			{
-//				rb_Lager.freezeRotation = false;
-//			}
+
+
 		}
 
 		if (mausrad == 0.0f) {
 			mausradWert = 0;
-//			if (rb_Lager != null) 
-//			{
-//				rb_Lager.freezeRotation = true;
-//			}
 		}
 
 		mausradDrehung = Mathf.Lerp (0.0F, mausradWert, mausradSmoother * Time.deltaTime);
 
-
+		// rechts klick um drehen/schaukeln zu erlauben
+		if (mausradDrehung == 0 && rb_Lager != null) 
+		{
+			if (Input.GetMouseButton (1)) {
+				rb_Lager.freezeRotation = false;
+			} else
+				rb_Lager.freezeRotation = true;
+		}
+		else if (rb_Lager != null)
+			rb_Lager.freezeRotation = false;
+			
+		// Drehen mit scroll
 		if (mausradDrehung != 0 && rb_Lager != null)
 		{
-			//bool tmp = rb_Lager.freezeRotation;
-			if(rb_Lager.angularVelocity == 0)
-				rb_Lager.freezeRotation = true;
-			
 			if (mausradDrehung > 0) 
 			{
-				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
-
+				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit, ForceMode2D.Impulse); 
 			}
 
 			if (mausradDrehung < 0) 
 			{
-				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit);
+				rb_Lager.AddTorque (mausradDrehung * geschwindigkeit, ForceMode2D.Impulse);
 			}
-			//rb_Lager.freezeRotation = tmp;
 		}
 	}
-
+	// Funktion zum entsprechendes Rigidbody2D zu holen
 	public void Rb_holen (Rigidbody2D rb_geklickt)
 	{
 		rb_Lager = rb_geklickt;
-
 	}
 }

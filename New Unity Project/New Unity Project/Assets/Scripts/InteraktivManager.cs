@@ -1,20 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//Manager für bewegliche Objekte
 public class InteraktivManager  
 {
-	private GameObject[] interaktiv1;
-	private GameObject[] reSkin;
+	private GameObject[] interaktiv1;				//primaer bewegbare  Objekte (mauskontroll)
+	private GameObject[] reSkin;					//Kontainer von puppen. es wird für Texturänderungen, Kinderelemente Finden und Center of Mass Festlegen benutzt 
 
-	private TargetJoint2D[] tj_interaktiv1;
+	private TargetJoint2D[] tj_interaktiv1;			//TargetJoint2D's von primaer bewegbare  Objekte, die hier hinzugefügt wird
 
-	private ObjektGeklickt[] geklickt;
+	//scripts zum Hinzufügen
+	private ObjektGeklickt[] geklickt;				
 	private ReSkinAnimation[] reskin;
-	private Interaktiv1Parent[] interaktiv1Parent;
+	private Interaktiv1Parent[] interaktiv1Parent;  //script um von FixedJoint2D betroffene Objekte zu finden
 
+	// FixedJoint2D und sen Anchor zum Einstellen und wiedererzeugen
 	public FixedJoint2D fj_interaktiv1;
 	public Vector2 anchorLager;
 
+	// Center of Mass
+	private Rigidbody2D[] rb_all;
+	public PolygonCollider2D[] pc_all;
+	public Vector2[] CoMLager;
+
+	//Singleton
 	private static InteraktivManager instance;
 	public static InteraktivManager Instance
 	{
@@ -33,7 +43,7 @@ public class InteraktivManager
 		tj_interaktiv1 = new TargetJoint2D[interaktiv1.Length];
 
 
-		for (int i = 0; i < interaktiv1.Length; ++i) 
+		for (int i = 0; i < interaktiv1.Length; ++i) //gehe durch alle primaer bewegbare Objekte und hinzufügt ...
 		{
 			if (interaktiv1 [i].GetComponent<ObjektGeklickt> () == null) 
 			{
@@ -51,6 +61,8 @@ public class InteraktivManager
 		reSkin = GameObject.FindGameObjectsWithTag ("reSkin");
 		reskin = new ReSkinAnimation[reSkin.Length];
 		interaktiv1Parent = new Interaktiv1Parent[reSkin.Length];
+		pc_all = new PolygonCollider2D[reSkin.Length];
+		CoMLager = new Vector2[reSkin.Length];
 
 		for (int i = 0; i < reSkin.Length; ++i) 
 		{
@@ -59,7 +71,7 @@ public class InteraktivManager
 				reskin [i] = reSkin [i].AddComponent<ReSkinAnimation> ();
 			}
 
-			if (reSkin [i].GetComponentInChildren<FixedJoint2D> () != null)
+			if (reSkin [i].GetComponentInChildren<FixedJoint2D> () != null) // wenn FixedJoint2D da ist:
 			{
 				interaktiv1Parent [i] = reSkin [i].AddComponent<Interaktiv1Parent> ();
 
@@ -70,6 +82,21 @@ public class InteraktivManager
 
 				anchorLager = fj_interaktiv1.anchor; // anchor lagern um fixed joint von der stelle wieder zu erstellen
 			}
+
+			// Center of Mass
+			rb_all = reSkin [i].GetComponentsInChildren<Rigidbody2D>();
+
+			foreach (Rigidbody2D tb in rb_all) 
+			{
+				pc_all [i] = tb.gameObject.AddComponent<PolygonCollider2D> ();	//hinzufüge PolygonCollider2D
+				pc_all [i] = tb.gameObject.GetComponent<PolygonCollider2D> ();	
+				CoMLager [i] = tb.centerOfMass;									//hole von PolygonCollider2D erzeugte CoM
+				UnityEngine.Object.Destroy(pc_all [i]);							//zerstöre alle PolygonCollider2D's, sie sind nicht mehr nötig
+
+				tb.centerOfMass = CoMLager [i];									//setze gespeicherte CoM's, die von PolygonCollider erzeugt worden sind, als Rigidbody2D's CoM 
+				Debug.Log (tb.gameObject.name + CoMLager[i] + tb.centerOfMass);
+			}
+
 		}
 	}
 }

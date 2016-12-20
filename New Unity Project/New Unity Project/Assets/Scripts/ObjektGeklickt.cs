@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Script für Finden der geklickten Objekte
 public class ObjektGeklickt : MonoBehaviour {
 
 	private GameObject manager;
@@ -11,11 +12,11 @@ public class ObjektGeklickt : MonoBehaviour {
 	public TargetJoint2D tj_geklickt;
 	public Rigidbody2D rb_geklickt;
 	public Rigidbody2D rb_geklickt_interaktiv2;
-	// jonas public static GameObject lastClickedObject;
+	// jz public static GameObject lastClickedObject;
 
 	void Start ()
 	{
-		manager = GameObject.FindWithTag ("MainCamera");
+		manager = GameObject.FindWithTag ("MainCamera");	// TODO muss ein leeres GameObjekt erzeugt werden, um monobehavior scripts zu lagern
 		mausZiehen = manager.GetComponent<MausZiehen> ();
 		mausradDreh = manager.GetComponent<MausradDreh> ();
 		tastaturController = manager.GetComponent<TastaturController> ();
@@ -35,7 +36,8 @@ public class ObjektGeklickt : MonoBehaviour {
 		tastaturController.Rb_holen (rb_geklickt_interaktiv2);
 		mausZiehen.Ziehen(tj_geklickt);
 
-		// jonas ObjektGeklickt.lastClickedObject = this.gameObject;
+		// jz ObjektGeklickt.lastClickedObject = this.gameObject;
 	}
+
 
 }
