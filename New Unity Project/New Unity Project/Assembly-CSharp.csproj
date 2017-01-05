@@ -45,19 +45,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CoM.cs" />
-     <Compile Include="Assets\Scripts\EventManager.cs" />
-     <Compile Include="Assets\Scripts\Interaktiv1Parent.cs" />
-     <Compile Include="Assets\Scripts\InteraktivManager.cs" />
-     <Compile Include="Assets\Scripts\MausZiehen.cs" />
-     <Compile Include="Assets\Scripts\MausradDreh.cs" />
-     <Compile Include="Assets\Scripts\ObjektGeklickt.cs" />
-     <Compile Include="Assets\Scripts\ReSkinAnimation.cs" />
-     <Compile Include="Assets\Scripts\ScrollRectSnap_CS.cs" />
-     <Compile Include="Assets\Scripts\ScrollRectSnap_Vertikal.cs" />
-     <Compile Include="Assets\Scripts\TastaturController.cs" />
-     <Compile Include="Assets\Scripts\ZerbrechlichJoint.cs" />
-     <Compile Include="Assets\Scripts\grenze.cs" />
+     <Compile Include="Assets\Scripts\InteraktivMenuScripts\ScrollRectSnap_CS.cs" />
+     <Compile Include="Assets\Scripts\InteraktivMenuScripts\ScrollRectSnap_Vertikal.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\Interaktiv1Parent.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\InteraktivManager.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\MausZiehen.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\MausradDreh.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\ObjektGeklickt.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\ReSkinAnimation.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\TastaturController.cs" />
+     <Compile Include="Assets\Scripts\InteraktivScripts\ZerbrechlichJoint.cs" />
+     <Compile Include="Assets\Scripts\experiment\CoM.cs" />
+     <Compile Include="Assets\Scripts\experiment\EventManager.cs" />
+     <Compile Include="Assets\Scripts\experiment\grenze.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
