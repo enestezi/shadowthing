@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TastaturController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuScripts\ArchiveList.cs">
     <Files>
-      <File FileName="Assets/Scripts/TastaturController.cs" Line="22" Column="30" />
-      <File FileName="Assets/Scripts/ZiehenController.cs" Line="54" Column="17" />
-      <File FileName="Assets/Scripts/ZerbrechlichJoint.cs" Line="36" Column="15" />
-      <File FileName="Assets/Scripts/MausradDreh.cs" Line="28" Column="55" />
+      <File FileName="Assets\Scripts\MenuScripts\BeispielButton.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\MenuScripts\ArchiveList.cs" Line="5" Column="25" />
+      <File FileName="Assets\Scripts\MenuScripts\PoolManager.cs" Line="64" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
