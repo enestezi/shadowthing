@@ -7,13 +7,24 @@ public class MausradDreh : MonoBehaviour
 {
 	public float mausradDrehung;       				//stores the rotation of the mouse wheel
 	public float mausradWert;						//das Wert, das später Drehfunktion weitergegeben wird
-	public float mausradGeschwindigkeit = 50f;		//Erhöht das scroll-input
+	public float mausradGeschwindigkeit;		//Erhöht das scroll-input
 	public float mausrad;							// scroll-input
 	public float mausradSmoother = 1f;				// erhöhung Wert in Lerp-Funktion in Time.deltaTime
 	public float geschwindigkeit = 300.0f;      	// dreh geschwindigkeit 
 
 	private Rigidbody2D rb_Lager; 					// Lager für Rigidbody2D, das von ObjektGeklickt script kommt 
 
+	void Awake ()
+	{
+		#if UNITY_STANDALONE_OSX
+		mausradGeschwindigkeit = 50f;
+		#endif
+
+		#if UNITY_STANDALONE_WIN
+		mausradGeschwindigkeit = 500f;
+		#endif
+	}
+	
 	void FixedUpdate ()
 	{
 		mausrad = Input.GetAxis ("Mouse ScrollWheel");

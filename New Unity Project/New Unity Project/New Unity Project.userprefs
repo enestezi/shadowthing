@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScrollRectSnap_Vertikal.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Scripts/ScrollRectSnap_CS.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ScrollRectSnap_Vertikal.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/CoM.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteraktivScripts/MausradDreh.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/ArchiveList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/BeispielButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/PoolManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
