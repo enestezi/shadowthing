@@ -2,39 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[System.Serializable]
-public class Objekt
-{
-	public string objTitel;
-	public string objBeschreibung;
-	public Sprite objIcon;
 
-}
+
 
 public class ArchiveList : MonoBehaviour 
 {
-	public List<Objekt> objList;
-	public Transform inhaltPanel;
-	public ArchiveList archive;
-	public PoolManager buttonPool;
+	ObjektManager objManager;
 
+	public struct Objekt
+	{
+		public string objTitel;
+		public string objBeschreibung;
+		public Sprite objIcon;
+	}
+
+	public List<Objekt> objList;
+
+	public Transform inhaltPanel;
+	public GameObject beispielButton;
+
+	Objekt obj;
 	// Use this for initialization
 	void Start () 
 	{
-		HinzufügeButtons ();
+		objManager = ObjektManager.Instance;
+		objList = new List<Objekt>();
+		beispielButton = Resources.Load<GameObject> ("Prefab/Menu/BeispielButton");
+		HinzufügeList ();
+
 	}
-		
-
-	private void HinzufügeButtons()
+	public void HinzufügeList()
 	{
-		for (int i = 0; i < objList.Count; i++) 
-		{
-			Objekt obj = objList [i];
-			GameObject neuButton = buttonPool.GetObject (); //objekt(button) wird von Pool geholt, active und null parent
-			neuButton.transform.SetParent (inhaltPanel); //geholte objekt wird in inhaltpanel positioniert
+		
+		for (int i = 0; i < objManager.objektSignatur.Count; i++) {
+			
+			obj.objTitel = objManager.objektSignatur [i];
+			obj.objBeschreibung = objManager.objektSignatur [i];
+			obj.objIcon = Resources.Load<Sprite> ("Sprites/Thumbnails/" + objManager.objektSignatur [i]);
+			objList.Add (obj);
 
-			BeispielButton beispielButton = neuButton.GetComponent<BeispielButton> ();
-			beispielButton.Setup (obj); //objekt titel,beschreibung und sprite wird zur Funktion Setup(BeispielButton.cs) geschickt. und referenz zu diesem script
+}
+
+		foreach (Objekt obj in objList) {
+			GameObject neuButton = Instantiate (beispielButton) as GameObject;
+			BeispielButton button = neuButton.GetComponent<BeispielButton> ();
+			button.icon.sprite = obj.objIcon;
+			button.titel.text = obj.objTitel;
+			button.beschreibung.text = obj.objBeschreibung;
+			neuButton.transform.SetParent (inhaltPanel);
 		}
+
 	}
 }
