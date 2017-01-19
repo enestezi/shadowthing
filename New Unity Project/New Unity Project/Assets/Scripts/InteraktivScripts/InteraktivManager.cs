@@ -37,6 +37,11 @@ public class InteraktivManager
 
 	public InteraktivManager()
 	{
+		bereiteFiguren (); //das kann auch weg
+	}
+
+	public void bereiteFiguren()
+	{
 		// alle interaktiv1 Objekte sind vorbereitet
 		interaktiv1 = GameObject.FindGameObjectsWithTag ("interakiv1"); 
 		geklickt = new ObjektGeklickt[interaktiv1.Length];
@@ -45,16 +50,11 @@ public class InteraktivManager
 
 		for (int i = 0; i < interaktiv1.Length; ++i) //gehe durch alle primaer bewegbare Objekte und hinzufügt ...
 		{
-			if (interaktiv1 [i].GetComponent<ObjektGeklickt> () == null) 
-			{
-				geklickt [i] = interaktiv1 [i].AddComponent<ObjektGeklickt> ();
-			}
-
-			if (interaktiv1 [i].GetComponent<TargetJoint2D> () == null) 
-			{
+			if (interaktiv1 [i].GetComponent<TargetJoint2D> () != null)
+				return;
+			
 				tj_interaktiv1 [i] = interaktiv1[i].AddComponent<TargetJoint2D> ();
-			}
-				
+				geklickt [i] = interaktiv1 [i].AddComponent<ObjektGeklickt> ();
 		}
 
 		// alle reSkin Objekte sind vorbereitet
@@ -66,10 +66,11 @@ public class InteraktivManager
 
 		for (int i = 0; i < reSkin.Length; ++i) 
 		{
-			if (reSkin [i].GetComponent<ReSkinAnimation> () == null) 
-			{
+			if (reSkin [i].GetComponent<ReSkinAnimation> () != null)
+				return;
+			
 				reskin [i] = reSkin [i].AddComponent<ReSkinAnimation> ();
-			}
+
 
 			if (reSkin [i].GetComponentInChildren<FixedJoint2D> () != null) // wenn FixedJoint2D da ist:
 			{
@@ -93,7 +94,7 @@ public class InteraktivManager
 				CoMLager [i] = tb.centerOfMass;									//hole von PolygonCollider2D erzeugte CoM
 				UnityEngine.Object.Destroy(pc_all [i]);							//zerstöre alle PolygonCollider2D's, sie sind nicht mehr nötig
 
-				tb.centerOfMass = CoMLager [i];									//setze gespeicherte CoM's, die von PolygonCollider erzeugt worden sind, als Rigidbody2D's CoM 
+				//tb.centerOfMass = CoMLager [i];									//setze gespeicherte CoM's, die von PolygonCollider erzeugt worden sind, als Rigidbody2D's CoM 
 				Debug.Log (tb.gameObject.name + CoMLager[i] + tb.centerOfMass);
 			}
 

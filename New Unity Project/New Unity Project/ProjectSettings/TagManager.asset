@@ -9,6 +9,10 @@ TagManager:
   - zerbrechlichJoint
   - interakiv2
   - manager
+  - inhaltPanel
+  - figuren
+  - mainMenu
+  - archive
   layers:
   - Default
   - TransparentFX

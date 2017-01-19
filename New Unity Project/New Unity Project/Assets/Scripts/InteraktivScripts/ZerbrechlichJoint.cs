@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ZerbrechlichJoint : MonoBehaviour {
-
+	//TODO: vielleicht soll automatisiert in objekt erscheinen
 	public GameObject[] interaktiv1;
 	public GameObject interaktiv1FJ; //um Objekt zu lagern, das fixedjoint hat 
 	public FixedJoint2D neu_fj_interaktiv1;

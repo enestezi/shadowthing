@@ -58,10 +58,11 @@
      <Compile Include="Assets\Scripts\InteraktivScripts\ZerbrechlichJoint.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\ArchiveList.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\BeispielButton.cs" />
+     <Compile Include="Assets\Scripts\MenuScripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\ObjektManager.cs" />
-     <Compile Include="Assets\Scripts\MenuScripts\PoolManager.cs" />
      <Compile Include="Assets\Scripts\experiment\CoM.cs" />
      <Compile Include="Assets\Scripts\experiment\EventManager.cs" />
+     <Compile Include="Assets\Scripts\experiment\PoolManager.cs" />
      <Compile Include="Assets\Scripts\experiment\grenze.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
