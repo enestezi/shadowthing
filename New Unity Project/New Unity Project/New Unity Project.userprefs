@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuScripts/MenuManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/InteraktivScripts/InteraktivManager.cs" Line="94" Column="32" />
-      <File FileName="Assets/Scripts/MenuScripts/ArchiveList.cs" Line="64" Column="28" />
-      <File FileName="Assets/Scripts/MenuScripts/MenuManager.cs" Line="35" Column="49" />
-      <File FileName="Assets/Scripts/MenuScripts/ObjektManager.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/InteraktivScripts/InteraktivManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/ArchiveList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/MenuManager.cs" Line="35" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/ObjektManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MenuScripts/BeispielButton.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
