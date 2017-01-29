@@ -23,6 +23,7 @@ public class InteraktivManager
 	private Rigidbody2D[] rb_all;
 	public PolygonCollider2D[] pc_all;
 	public Vector2[] CoMLager;
+	public float[] MassLager; 
 
 	//Singleton
 	private static InteraktivManager instance;
@@ -63,6 +64,7 @@ public class InteraktivManager
 		interaktiv1Parent = new Interaktiv1Parent[reSkin.Length];
 		pc_all = new PolygonCollider2D[reSkin.Length];
 		CoMLager = new Vector2[reSkin.Length];
+		MassLager = new float[reSkin.Length];
 
 		for (int i = 0; i < reSkin.Length; ++i) 
 		{
@@ -89,13 +91,32 @@ public class InteraktivManager
 
 			foreach (Rigidbody2D tb in rb_all) 
 			{
-				pc_all [i] = tb.gameObject.AddComponent<PolygonCollider2D> ();	//hinzufüge PolygonCollider2D
-				pc_all [i] = tb.gameObject.GetComponent<PolygonCollider2D> ();	
-				CoMLager [i] = tb.centerOfMass;									//hole von PolygonCollider2D erzeugte CoM
-				UnityEngine.Object.Destroy(pc_all [i]);							//zerstöre alle PolygonCollider2D's, sie sind nicht mehr nötig
+				// disable alle collider damit denen gewicht nicht mit gerechnet wird
+//				tb.gameObject.GetComponent<Collider2D> ().enabled = false;
 
-				//tb.centerOfMass = CoMLager [i];									//setze gespeicherte CoM's, die von PolygonCollider erzeugt worden sind, als Rigidbody2D's CoM 
-				Debug.Log (tb.gameObject.name + CoMLager[i] + tb.centerOfMass);
+				//hinzufüge PolygonCollider2D
+				pc_all [i] = tb.gameObject.AddComponent<PolygonCollider2D> ();	
+				pc_all [i] = tb.gameObject.GetComponent<PolygonCollider2D> ();	
+
+				//Debug.Log ("old mass" + tb.mass );
+
+				// hole Masse, die mit hilfe der existierenden colliders (Polygon) automatisch berechnet wird
+//				tb.useAutoMass = true;
+//				MassLager [i] = tb.mass;
+//				tb.useAutoMass = false;
+//				tb.mass = MassLager [i];
+//
+				//hole von PolygonCollider2D erzeugte CoM
+				CoMLager [i] = tb.centerOfMass;									
+				UnityEngine.Object.Destroy(pc_all [i]);	//zerstöre alle PolygonCollider2D's, sie sind nicht mehr nötig						
+				tb.centerOfMass = CoMLager [i];	//setze gespeicherte CoM's, die von PolygonCollider erzeugt worden sind, als Rigidbody2D's CoM 
+
+				// enable alle collider damit denen gewicht nicht mit gerechnet wird
+//				tb.gameObject.GetComponent<Collider2D> ().enabled = true;
+
+				//Debug.Log ("new mass" + tb.mass );
+				//Debug.Log (tb.gameObject.name + CoMLager[i] + tb.centerOfMass);
+
 			}
 
 		}

@@ -496,6 +496,16 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 50183151780794922, guid: 9f002d10cc25e4dd2a008b1910725a87,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50183151780794922, guid: 9f002d10cc25e4dd2a008b1910725a87,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f002d10cc25e4dd2a008b1910725a87, type: 2}
   m_IsPrefabParent: 0
@@ -1038,6 +1048,36 @@ Prefab:
     - target: {fileID: 4408978969579702, guid: d63069034e2ea427d8f5a873c4977973, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50273626630216942, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50423547920680722, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50178548828828776, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50273626630216942, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50423547920680722, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50178548828828776, guid: d63069034e2ea427d8f5a873c4977973,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d63069034e2ea427d8f5a873c4977973, type: 2}

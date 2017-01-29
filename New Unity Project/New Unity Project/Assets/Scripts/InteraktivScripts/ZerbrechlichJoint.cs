@@ -16,7 +16,7 @@ public class ZerbrechlichJoint : MonoBehaviour {
 	void Start () 
 	{	 
 		manager = InteraktivManager.Instance;
-			
+		manager.bereiteFiguren(); //TODO: muss umgezogen werden
 		zerbrechlich = gameObject.GetComponentInParent<Interaktiv1Parent> ().zerbrechlich; //GameObject.FindGameObjectWithTag ("zerbrechlichJoint");
 
 		interaktiv1 = GameObject.FindGameObjectsWithTag ("interakiv1"); 

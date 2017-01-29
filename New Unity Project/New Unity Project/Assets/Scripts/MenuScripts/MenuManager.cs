@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //wechsel scene
 
 public class MenuManager : MonoBehaviour {
 
@@ -23,11 +24,19 @@ public class MenuManager : MonoBehaviour {
 		istArchiveVersteckt = true;
 		istMainMenuVersteckt = false;
 	}
-		
 
+	public void Performance ()
+	{
+		SceneManager.LoadScene (1);
+	}
+		
 	public void Exit()
 	{
-		Application.Quit();
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#else
+		Application.Quit ();
+		#endif
 	}
 
 
