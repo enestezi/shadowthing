@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 1205212815}
   - component: {fileID: 1205212814}
   - component: {fileID: 1205212816}
+  - component: {fileID: 1205212817}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -278,6 +279,24 @@ MonoBehaviour:
   archiveList: {fileID: 0}
   figurSlide: {fileID: 236770040}
   istFigurVersteckt: 0
+--- !u!114 &1205212817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205212813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5e129ce2370e54d99b9a715eaccf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objAnzahl: 0
+  inhaltPanel: {fileID: 0}
+  beispielButton: {fileID: 0}
+  figurPos: {fileID: 0}
+  figurPool: []
+  figur: {fileID: 0}
+  deaktivierFigur: {fileID: 0}
 --- !u!1 &1491619554
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +511,8 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114104377623777672, guid: 6c64d12bdb35280449c44214944e48d6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6c64d12bdb35280449c44214944e48d6, type: 2}
   m_IsPrefabParent: 0
 --- !u!95 &1550985353 stripped

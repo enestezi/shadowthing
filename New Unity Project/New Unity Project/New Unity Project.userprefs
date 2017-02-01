@@ -1,13 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteraktivScripts/InteraktivManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuScripts/ArchiveList.cs">
     <Files>
-      <File FileName="Assets/Scripts/InteraktivScripts/InteraktivManager.cs" Line="115" Column="64" />
-      <File FileName="Assets/Scripts/MenuScripts/ArchiveList.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MenuScripts/MenuManager.cs" Line="30" Column="28" />
+      <File FileName="Assets/Scripts/InteraktivMenuScripts/FigurThumbList.cs" Line="5" Column="28" />
+      <File FileName="Assets/Scripts/InteraktivMenuScripts/InteraktivList.cs" Line="35" Column="25" />
       <File FileName="Assets/Scripts/MenuScripts/ObjektManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/InteraktivScripts/ZerbrechlichJoint.cs" Line="19" Column="27" />
-      <File FileName="Assets/Scripts/InteraktivScripts/MausZiehen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuScripts/ArchiveList.cs" Line="47" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

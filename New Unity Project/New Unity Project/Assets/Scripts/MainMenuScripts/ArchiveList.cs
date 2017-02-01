@@ -21,9 +21,12 @@ public class ArchiveList : MonoBehaviour
 	public List<Objekt> objList;
 	public int objAnzahl = 0;
 
+
+	//content panel and button
 	public Transform inhaltPanel;
 	public GameObject beispielButton;
 
+	// figur-variablen für puppen
 	public Transform figurPos;
 	public List<GameObject> figurPool;
 	public GameObject figur; 

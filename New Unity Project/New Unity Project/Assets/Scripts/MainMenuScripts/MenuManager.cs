@@ -21,8 +21,8 @@ public class MenuManager : MonoBehaviour {
 	{
 		mainMenu = GameObject.FindGameObjectWithTag ("mainMenu");
 		archive = GameObject.FindGameObjectWithTag ("archive");
-		istArchiveVersteckt = true;
-		istMainMenuVersteckt = false;
+		istArchiveVersteckt = false;
+		istMainMenuVersteckt = true;
 	}
 
 	public void Performance ()
@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void MainMenuSlide ()
 	{
-		archiveList = GameObject.FindGameObjectWithTag ("inhaltPanel").GetComponent<ArchiveList>();
+		archiveList = GetComponent<ArchiveList>();
 		
 		if (!istMainMenuVersteckt) 
 		{

@@ -13,6 +13,8 @@ TagManager:
   - figuren
   - mainMenu
   - archive
+  - halterPanel
+  - iconPanel
   layers:
   - Default
   - TransparentFX
@@ -55,4 +57,7 @@ TagManager:
     locked: 0
   - name: Figur
     uniqueID: 2273570005
+    locked: 0
+  - name: worldui
+    uniqueID: 4079348939
     locked: 0
