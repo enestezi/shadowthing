@@ -556,6 +556,11 @@ Prefab:
     - target: {fileID: 233018107904783418, guid: 9f002d10cc25e4dd2a008b1910725a87,
         type: 2}
       propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 233018107904783418, guid: 9f002d10cc25e4dd2a008b1910725a87,
+        type: 2}
+      propertyPath: m_EnableCollision
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1829,7 +1834,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2061134305}
   - component: {fileID: 2061134304}
-  - component: {fileID: 2061134306}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -1851,8 +1855,9 @@ MonoBehaviour:
   figurenPanel: {fileID: 0}
   halterPanel: {fileID: 0}
   halter: {fileID: 0}
-  figurIcon: {fileID: 0}
+  icon: {fileID: 0}
   halterList: []
+  iconList: []
 --- !u!4 &2061134305
 Transform:
   m_ObjectHideFlags: 0
@@ -1866,14 +1871,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2061134306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2061134303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340efe71370eb45a9a53acf5a033fd77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

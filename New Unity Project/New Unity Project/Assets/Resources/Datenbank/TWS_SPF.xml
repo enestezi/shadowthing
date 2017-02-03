@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<lidoWrap xmlns:lido="http://www.lido-schema.org"
+<lidoWrap>
+   <lido:lido xmlns:lido="http://www.lido-schema.org"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd">
-   <lido:lido>
       <lido:lidoRecID lido:source="Theaterwissenschaftliche Sammlung, Universität zu Köln"
-                      lido:type="local">TWS_SPF00001</lido:lidoRecID>
+         lido:type="local">TWS_SPF00001</lido:lidoRecID>
       <lido:category>
          <lido:conceptID lido:type="AAT"/>
          <lido:term xml:lang="de">Einzelobjekt</lido:term>
@@ -15,7 +15,7 @@
                <lido:objectWorkType>
                   <lido:conceptID lido:type="AAT">300211230</lido:conceptID>
                   <lido:term lido:addedSearchTerm="yes"
-                             lido:encodinganalog="300211230">Figur</lido:term>
+                     lido:encodinganalog="300211230">Figur</lido:term>
                </lido:objectWorkType>
             </lido:objectWorkTypeWrap>
             <lido:classificationWrap>
@@ -29,7 +29,7 @@
             <lido:titleWrap>
                <lido:titleSet>
                   <lido:appellationValue lido:pref="preferred"
-                                         xml:lang="de">Karagöz</lido:appellationValue>
+                     xml:lang="de">Karagöz</lido:appellationValue>
                </lido:titleSet>
             </lido:titleWrap>
             <lido:repositoryWrap>
@@ -39,6 +39,7 @@
                         <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
                      </lido:legalBodyName>
                   </lido:repositoryName>
+                  <lido:workID lido:type="inventory number"/>
                   <lido:repositoryLocation>
                      <lido:namePlaceSet>
                         <lido:appellationValue>Schattenspielsammlung</lido:appellationValue>
@@ -64,6 +65,42 @@
             </lido:objectMeasurementsWrap>
          </lido:objectIdentificationWrap>
          <lido:eventWrap>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Herstellung</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Performance</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
             <lido:eventSet>
                <lido:displayEvent>Für die Hamburger Aufführung konnte Niessen auf eigene umfangreiche Karagöz-Bestände zurückgreifen, die er bereits 1926 erworben hatte. Der Orientalist und Turkologe Theodor Menzel (1878-1939), der wie Georg Jacob in Kiel lehrte und 1929 dessen Nachfolger am orientalischen Institut werden sollte, hatte Niessen seinerzeit den Kontakt zu einem Figurenverkäufer in Istanbul vermittelt und dem Kölner Institut auf diese Weise den Erwerb von rund 100 Figuren ermöglicht. (Vgl. Menzel an Niessen (Telegr.), 5.2.1926 sowie Niessen an Eckert, 8.2.1926 beide UAK Zug. 9/274.)</lido:displayEvent>
                <lido:event>
@@ -91,28 +128,6 @@
                      <lido:subjectDate>
                         <lido:displayDate>[frühestens] - [spätestens]</lido:displayDate>
                      </lido:subjectDate>
-                     <lido:subjectEvent>
-                        <lido:displayEvent/>
-                        <lido:event>
-                           <lido:eventType>
-                              <lido:term>Herstellung</lido:term>
-                              <lido:term>Inszenierung</lido:term>
-                              <lido:term>Erwerb</lido:term>
-                           </lido:eventType>
-                           <lido:eventName>
-                              <lido:appellationValue/>
-                           </lido:eventName>
-                           <lido:culture>
-                              <lido:term/>
-                           </lido:culture>
-                           <lido:eventDate>
-                              <lido:date>
-                                 <lido:earliestDate/>
-                                 <lido:latestDate/>
-                              </lido:date>
-                           </lido:eventDate>
-                        </lido:event>
-                     </lido:subjectEvent>
                   </lido:subject>
                </lido:subjectSet>
             </lido:subjectWrap>
@@ -132,7 +147,9 @@
          </lido:recordWrap>
       </lido:administrativeMetadata>
    </lido:lido>
-   <lido:lido>
+   <lido:lido xmlns:lido="http://www.lido-schema.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd">
       <lido:lidoRecID lido:source="Theaterwissenschaftliche Sammlung, Universität zu Köln"
          lido:type="local">TWS_SPF00003</lido:lidoRecID>
       <lido:category>
@@ -169,6 +186,7 @@
                         <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
                      </lido:legalBodyName>
                   </lido:repositoryName>
+                  <lido:workID lido:type="inventory number"/>
                   <lido:repositoryLocation>
                      <lido:namePlaceSet>
                         <lido:appellationValue>Schattenspielsammlung</lido:appellationValue>
@@ -194,6 +212,42 @@
             </lido:objectMeasurementsWrap>
          </lido:objectIdentificationWrap>
          <lido:eventWrap>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Herstellung</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Performance</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
             <lido:eventSet>
                <lido:displayEvent>Für die Hamburger Aufführung konnte Niessen auf eigene umfangreiche Karagöz-Bestände zurückgreifen, die er bereits 1926 erworben hatte. Der Orientalist und Turkologe Theodor Menzel (1878-1939), der wie Georg Jacob in Kiel lehrte und 1929 dessen Nachfolger am orientalischen Institut werden sollte, hatte Niessen seinerzeit den Kontakt zu einem Figurenverkäufer in Istanbul vermittelt und dem Kölner Institut auf diese Weise den Erwerb von rund 100 Figuren ermöglicht. (Vgl. Menzel an Niessen (Telegr.), 5.2.1926 sowie Niessen an Eckert, 8.2.1926 beide UAK Zug. 9/274.)</lido:displayEvent>
                <lido:event>
@@ -221,28 +275,6 @@
                      <lido:subjectDate>
                         <lido:displayDate>[frühestens] - [spätestens]</lido:displayDate>
                      </lido:subjectDate>
-                     <lido:subjectEvent>
-                        <lido:displayEvent/>
-                        <lido:event>
-                           <lido:eventType>
-                              <lido:term>Herstellung</lido:term>
-                              <lido:term>Inszenierung</lido:term>
-                              <lido:term>Erwerb</lido:term>
-                           </lido:eventType>
-                           <lido:eventName>
-                              <lido:appellationValue/>
-                           </lido:eventName>
-                           <lido:culture>
-                              <lido:term/>
-                           </lido:culture>
-                           <lido:eventDate>
-                              <lido:date>
-                                 <lido:earliestDate/>
-                                 <lido:latestDate/>
-                              </lido:date>
-                           </lido:eventDate>
-                        </lido:event>
-                     </lido:subjectEvent>
                   </lido:subject>
                </lido:subjectSet>
             </lido:subjectWrap>

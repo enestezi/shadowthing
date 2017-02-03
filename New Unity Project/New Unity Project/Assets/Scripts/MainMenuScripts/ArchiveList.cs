@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ArchiveList : MonoBehaviour 
 {
-	InteraktivManager intManager;
+	InteraktivManager intManager; //ruft die funktion bereitefiguren auf, die die figuren mit scripts und componenten dekoriert
 	ObjektManager objManager;
 
 	public struct Objekt
@@ -66,7 +66,7 @@ public class ArchiveList : MonoBehaviour
 			figur.transform.SetParent (figurPos);
 			figur.SetActive (false);
 
-			GameObject neuButton = Instantiate (beispielButton) as GameObject;
+			GameObject neuButton = Instantiate (beispielButton) as GameObject; //was ist unterschied:(GameObject)GameObject.Instantiate (Resources.Load<GameObject>("Prefab/Interaktiv/"+dataSignaturListe)) 
 			BeispielButton button = neuButton.GetComponent<BeispielButton> ();
 			button.icon.sprite = objList[i].objIcon;
 			button.titel.text = objList[i].objTitel;

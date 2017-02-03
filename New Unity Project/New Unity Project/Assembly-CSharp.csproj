@@ -46,7 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Datenbank\ObjektDatenbank.cs" />
+     <Compile Include="Assets\Scripts\Datenbank\LidoWrap.cs" />
+     <Compile Include="Assets\Scripts\Datenbank\ObjDatenbank.cs" />
      <Compile Include="Assets\Scripts\InteraktivMenuScripts\InteraktivList.cs" />
      <Compile Include="Assets\Scripts\InteraktivScripts\Interaktiv1Parent.cs" />
      <Compile Include="Assets\Scripts\InteraktivScripts\InteraktivManager.cs" />
@@ -71,7 +72,6 @@
      <Compile Include="Assets\Scripts\experiment\ScrollRectSnap_Vertikal.cs" />
      <Compile Include="Assets\Scripts\experiment\grenze.cs" />
      <None Include="Assets\Resources\Datenbank\TWS_SPF.xml" />
-     <None Include="Assets\Resources\items.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
