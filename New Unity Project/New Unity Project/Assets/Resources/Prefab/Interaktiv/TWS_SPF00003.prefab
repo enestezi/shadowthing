@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4408978969579702}
   m_Layer: 0
-  m_Name: TWS_1
+  m_Name: TWS_SPF00003
   m_TagString: reSkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

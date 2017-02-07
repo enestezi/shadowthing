@@ -4,10 +4,12 @@ using UnityEngine;
 using System.Xml;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
 public class InteraktivList : MonoBehaviour {
 
 	ObjektDatenbank objDatenbank;
-	private int halterAnzahl;
+	private int objAnzahl;
 
 	public GameObject figurenPanel;
 	public GameObject halterPanel;
@@ -21,10 +23,7 @@ public class InteraktivList : MonoBehaviour {
 	void Start()
 	{
 		objDatenbank = ObjektDatenbank.Instance;
-		objDatenbank.LadeData ();
-		objDatenbank.ErzeugeObjDatenbak ();
-
-		halterAnzahl = objDatenbank.objekte.Count;
+		objAnzahl = objDatenbank.objekte.Count;
 
 		figurenPanel = GameObject.FindGameObjectWithTag ("iconPanel");
 		halterPanel = GameObject.FindGameObjectWithTag ("halterPanel");
@@ -32,7 +31,7 @@ public class InteraktivList : MonoBehaviour {
 		icon = Resources.Load<GameObject> ("Prefab/Menu/FigurIcon");
 
 
-		for (int i = 0; i < halterAnzahl; i++) 
+		for (int i = 0; i < objAnzahl; i++) 
 		{
 			
 			halterList.Add (Instantiate (halter));
@@ -47,4 +46,8 @@ public class InteraktivList : MonoBehaviour {
 
 	}
 		
+	public void zuruck(){
+		Debug.Log ("sfdad");
+		SceneManager.LoadScene (0);
+	}
 }

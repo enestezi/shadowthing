@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ZerbrechlichJoint : MonoBehaviour {
 	//TODO: vielleicht soll automatisiert in objekt erscheinen
+
 	public GameObject[] interaktiv1;
 	public GameObject interaktiv1FJ; //um Objekt zu lagern, das fixedjoint hat 
 	public FixedJoint2D neu_fj_interaktiv1;
@@ -33,9 +34,6 @@ public class ZerbrechlichJoint : MonoBehaviour {
 
 	void OnJointBreak2D (Joint2D brokenJoint) {
 		kaputt = true;
-		//Debug.Log ("Joint kaputt!");
-		//Debug.Log ("force = " + brokenJoint.reactionForce);
-		//Debug.Log ("torque = " + brokenJoint.reactionTorque);
 	}
 
 	void Update () 
@@ -47,7 +45,7 @@ public class ZerbrechlichJoint : MonoBehaviour {
 
 		if (kaputt) 
 		{
-			if (angle <= 0) 
+			if (angle <= 0 && angle >= -1) 
 			{
 				interaktiv1FJ.AddComponent<FixedJoint2D> ();
 				neu_fj_interaktiv1 = interaktiv1FJ.GetComponent<FixedJoint2D> ();

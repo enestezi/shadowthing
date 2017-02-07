@@ -35,11 +35,7 @@ public class InteraktivManager
 			return instance;
 		}
 	}
-
-	public InteraktivManager()
-	{
-		bereiteFiguren (); //das kann auch weg
-	}
+		
 
 	public void bereiteFiguren()
 	{

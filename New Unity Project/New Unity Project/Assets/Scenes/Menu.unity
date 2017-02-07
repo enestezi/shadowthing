@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5e129ce2370e54d99b9a715eaccf0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objAnzahl: 0
   inhaltPanel: {fileID: 0}
   beispielButton: {fileID: 0}
   figurPos: {fileID: 0}

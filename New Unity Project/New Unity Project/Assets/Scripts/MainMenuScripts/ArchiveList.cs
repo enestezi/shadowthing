@@ -8,22 +8,13 @@ using UnityEngine.UI;
 public class ArchiveList : MonoBehaviour 
 {
 	InteraktivManager intManager; //ruft die funktion bereitefiguren auf, die die figuren mit scripts und componenten dekoriert
-	ObjektManager objManager;
+	ObjektDatenbank objDatenbank;
 
-	public struct Objekt
-	{
-		public string objTitel;
-		public string objBeschreibung;
-		public Sprite objIcon;
-	}
-	Objekt obj;
-
-	public List<Objekt> objList;
-	public int objAnzahl = 0;
+	private int objAnzahl = 0;
 
 
 	//content panel and button
-	public Transform inhaltPanel;
+	public GameObject inhaltPanel;
 	public GameObject beispielButton;
 
 	// figur-variablen für puppen
@@ -36,13 +27,15 @@ public class ArchiveList : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		objManager = ObjektManager.Instance;
+		objDatenbank = ObjektDatenbank.Instance;
+		objAnzahl = objDatenbank.objekte.Count;
+
 		intManager = InteraktivManager.Instance;
+		intManager.bereiteFiguren ();
+
 		figurPool = new List<GameObject>();
-		objList = new List<Objekt>();
-		objAnzahl = objManager.objektSignatur.Count;
 		beispielButton = Resources.Load<GameObject> ("Prefab/Menu/BeispielButton");
-		inhaltPanel = ((GameObject)GameObject.FindGameObjectWithTag ("inhaltPanel")).transform;
+		inhaltPanel = ((GameObject)GameObject.FindGameObjectWithTag ("inhaltPanel"));
 		figurPos = ((GameObject)GameObject.FindGameObjectWithTag ("figuren")).transform;
 		HinzufügeObj ();
 	}
@@ -51,30 +44,23 @@ public class ArchiveList : MonoBehaviour
 	{
 		for (int i = 0; i < objAnzahl; i++)
 		{
-			string dataSignaturListe;
-			dataSignaturListe = objManager.objektSignatur [i];
+			GameObject neuButton = Instantiate (beispielButton) as GameObject; //was ist unterschied:(GameObject)GameObject.Instantiate (Resources.Load<GameObject>("Prefab/Interaktiv/"+dataSignaturListe)) 
+			BeispielButton button = neuButton.GetComponent<BeispielButton> ();
+			button.icon.sprite = objDatenbank.objekte [i].Icon;
+			button.titel.text = objDatenbank.objekte [i].Titel;
+			button.beschreibung.text = objDatenbank.objekte [i].Beschreibung;
+			neuButton.transform.SetParent (inhaltPanel.transform);
 
-			obj.objTitel = dataSignaturListe;
-			obj.objBeschreibung = dataSignaturListe;
-			obj.objIcon = Resources.Load<Sprite> ("Sprites/Thumbnails/" + dataSignaturListe);
-			objList.Add (obj);
+			string objSignatur;
+			objSignatur = objDatenbank.objekte [i].Signatur;
+			neuButton.GetComponent<Button> ().onClick.AddListener (() => {AktiviereFigur(objSignatur);});
 
 			// Figuren instantiate und in pool hinzugefügt
-			figur = (GameObject)GameObject.Instantiate (Resources.Load<GameObject>("Prefab/Interaktiv/"+dataSignaturListe));
+			figur = (GameObject)GameObject.Instantiate (objDatenbank.objekte [i].PrefFigur);
 			figurPool.Add (figur);
 			figur.transform.position = figurPos.position;
 			figur.transform.SetParent (figurPos);
 			figur.SetActive (false);
-
-			GameObject neuButton = Instantiate (beispielButton) as GameObject; //was ist unterschied:(GameObject)GameObject.Instantiate (Resources.Load<GameObject>("Prefab/Interaktiv/"+dataSignaturListe)) 
-			BeispielButton button = neuButton.GetComponent<BeispielButton> ();
-			button.icon.sprite = objList[i].objIcon;
-			button.titel.text = objList[i].objTitel;
-			button.beschreibung.text = objList[i].objBeschreibung;
-			neuButton.transform.SetParent (inhaltPanel);
-
-			neuButton.GetComponent<Button> ().onClick.AddListener (() => {AktiviereFigur(dataSignaturListe);});
-		    //vielleicht neue for schleife?? wird aktiviereFigur nur letzte inaktive gameobjekt weiter gegeben
 		}
 	}
 
@@ -99,8 +85,6 @@ public class ArchiveList : MonoBehaviour
 		if (deaktivierFigur)
 			deaktivierFigur.SetActive (false); // Deaktiviere aktiven Figur
 		
-		Debug.Log (aktivSignatur);
-		Debug.Log (aktivFigur+"obj");
 		aktivFigur.SetActive (true);
 		intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 		deaktivierFigur = aktivFigur;

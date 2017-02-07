@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\MainMenuScripts\ArchiveList.cs" />
      <Compile Include="Assets\Scripts\MainMenuScripts\BeispielButton.cs" />
      <Compile Include="Assets\Scripts\MainMenuScripts\MenuManager.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScripts\ObjektManager.cs" />
      <Compile Include="Assets\Scripts\experiment\CoM.cs" />
      <Compile Include="Assets\Scripts\experiment\EventManager.cs" />
      <Compile Include="Assets\Scripts\experiment\Item.cs" />

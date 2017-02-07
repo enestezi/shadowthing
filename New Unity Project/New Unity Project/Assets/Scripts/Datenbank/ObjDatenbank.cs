@@ -7,12 +7,6 @@ using System.IO;
 
 public class ObjektDatenbank 
 {
-	public List <LidoObjekt> objekte = new List<LidoObjekt>();
-	public int lidoObjAnzahl = 0;
-
-	private LidoWrap xmlObj = null;
-
-
 	private static ObjektDatenbank instance;
 	public static ObjektDatenbank Instance
 	{
@@ -23,11 +17,18 @@ public class ObjektDatenbank
 		}
 	}
 
-	public ObjektDatenbank () 
-	{
-	}
-	//public void return 
 
+	public List <LidoObjekt> objekte = new List<LidoObjekt>();
+	public int lidoObjAnzahl = 0;
+
+	private LidoWrap xmlObj = null;
+
+	public ObjektDatenbank ()
+	{
+		// die funktionen werden nur einmal gerufen. dadurch wird es verhindert dass die listen jedes szenenwechsel die liste neu füllt,bzw. gleiche objekte nochmal addiert
+		LadeData ();
+		ErzeugeObjDatenbak ();
+	}
 
     public void LadeData ()
 	{
@@ -50,17 +51,6 @@ public class ObjektDatenbank
 				xmlObj.Lido [i].DescriptiveMetadata.ObjectIdentificationWrap.ObjectDescriptionWrap.ObjectDescriptionSet.DescriptiveNoteValue,
 				xmlObj.Lido [i].DescriptiveMetadata.ObjectRelationWrap.SubjectWrap.SubjectSet.DisplaySubject,
 				xmlObj.Lido [i].DescriptiveMetadata.EventWrap.EventSet [2].DisplayEvent));
-
-			//			lidoObj.signatur = xmlObj.Lido [i].LidoRecID.Text;
-			//			lidoObj.titel = xmlObj.Lido [i].DescriptiveMetadata.ObjectIdentificationWrap.TitleWrap.TitleSet.AppellationValue.Text;
-			//			lidoObj.beschreibung = xmlObj.Lido [i].DescriptiveMetadata.ObjectIdentificationWrap.ObjectDescriptionWrap.ObjectDescriptionSet.DescriptiveNoteValue;
-			//			lidoObj.inhBeschreibung = xmlObj.Lido [i].DescriptiveMetadata.ObjectRelationWrap.SubjectWrap.SubjectSet.DisplaySubject;
-			//			lidoObj.provBeschreibung = xmlObj.Lido [i].DescriptiveMetadata.EventWrap.EventSet [2].DisplayEvent; //hardcoded TODO: if statement
-			//			lidoObj.icon = Resources.Load<Sprite> ("Sprites/Thumbnails/" + lidoObj.signatur);
-			//			lidoObj.prefab = Resources.Load<GameObject> ("Prefab/Interaktiv/" + lidoObj.signatur);
-			//			objekte.Add(lidoObj);
-
-			Debug.Log (objekte[i].Beschreibung);
 		}
 	}
 }
