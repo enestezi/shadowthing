@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 224875385919004912}
   - component: {fileID: 222620773398470886}
   - component: {fileID: 114182095398918536}
+  - component: {fileID: 114935621457012764}
+  - component: {fileID: 114712169817660682}
   m_Layer: 5
   m_Name: FigurIcon
   m_TagString: Untagged
@@ -55,6 +57,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114712169817660682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476729570858302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+--- !u!114 &114935621457012764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476729570858302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55ae94e69b0745699e216f3e1b4c922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222620773398470886
 CanvasRenderer:
   m_ObjectHideFlags: 1

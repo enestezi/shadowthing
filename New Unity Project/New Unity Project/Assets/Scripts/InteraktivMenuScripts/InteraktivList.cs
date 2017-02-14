@@ -38,9 +38,11 @@ public class InteraktivList : MonoBehaviour {
 			halterList[i].transform.SetParent (halterPanel.transform);
 
 			iconList.Add (Instantiate (icon));
+			iconList [i].GetComponent<IconZiehen> ().objekt = objDatenbank.objekte [i]; //objektdaten script von icon bekommt jeweiligen objekt(infos)
 			iconList[i].transform.SetParent (halterList[i].transform);
 			iconList [i].transform.position = Vector2.zero;
 			iconList [i].GetComponent<Image> ().sprite = objDatenbank.objekte [i].Icon;
+
 		}
 
 
