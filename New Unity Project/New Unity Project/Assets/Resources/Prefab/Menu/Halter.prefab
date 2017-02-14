@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224835393214391722}
   - component: {fileID: 222178191810454218}
   - component: {fileID: 114324215256806914}
-  - component: {fileID: 114288122469397054}
+  - component: {fileID: 114094161220046410}
   m_Layer: 5
   m_Name: Halter
   m_TagString: Untagged
@@ -29,7 +29,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114288122469397054
+--- !u!114 &114094161220046410
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,9 +37,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1803456519836576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df18b051c821742dc8ba6c15133be140, type: 3}
+  m_Script: {fileID: 11500000, guid: a820022871f4e4290b1a6fe2d3e7f9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  halterNrDrop: 0
 --- !u!114 &114324215256806914
 MonoBehaviour:
   m_ObjectHideFlags: 1

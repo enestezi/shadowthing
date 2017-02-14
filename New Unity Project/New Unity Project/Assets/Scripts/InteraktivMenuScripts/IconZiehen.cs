@@ -8,17 +8,22 @@ using System;
 public class IconZiehen : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler 
 {
 	public LidoObjekt objekt;
+	public int halterNr;	//welche halter ist das objekt in
 
-	private Transform iconParent;
+	private InteraktivList intList;
 
+	void Start () 
+	{
+		intList = GameObject.FindGameObjectWithTag ("menuManager").GetComponent<InteraktivList> ();
+	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		if (objekt != null) 
 		{
-			iconParent = this.transform.parent;
 			this.transform.SetParent (this.transform.parent.parent); //beim drag wird die icon als kind element von eltern von eltern element gesetzt, damit es nicht hinter andere objekte bleibt
 			this.transform.position = eventData.position;
+			GetComponent<CanvasGroup> ().blocksRaycasts = false;
 		}
 	}
 
@@ -30,8 +35,10 @@ public class IconZiehen : MonoBehaviour, IPointerDownHandler, IDragHandler, IEnd
 		}
 	}
 
-	public void OnEndDrag(PointerEventData eventData)	// nach drag zurück zum ursprungliche parent
+	public void OnEndDrag(PointerEventData eventData)	
 	{
-		this.transform.SetParent (iconParent);
+		this.transform.SetParent (intList.halterList [halterNr].transform);	// nach drag zurück zum ursprungliche parent
+		this.transform.position = intList.halterList [halterNr].transform.position;
+		GetComponent<CanvasGroup> ().blocksRaycasts = true;
 	}
 }

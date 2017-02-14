@@ -15,6 +15,7 @@ TagManager:
   - archive
   - halterPanel
   - iconPanel
+  - menuManager
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114182095398918536}
   - component: {fileID: 114712169817660682}
   - component: {fileID: 114483931538932800}
+  - component: {fileID: 225909878966178542}
   m_Layer: 5
   m_Name: FigurIcon
   m_TagString: Untagged
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df18b051c821742dc8ba6c15133be140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  halterNr: 0
 --- !u!114 &114712169817660682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,3 +112,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225909878966178542
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476729570858302}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
