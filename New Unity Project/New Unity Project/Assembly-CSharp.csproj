@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Datenbank\LidoWrap.cs" />
      <Compile Include="Assets\Scripts\Datenbank\ObjDatenbank.cs" />
+     <Compile Include="Assets\Scripts\InteraktivMenuScripts\IconDaten.cs" />
      <Compile Include="Assets\Scripts\InteraktivMenuScripts\IconHalter.cs" />
      <Compile Include="Assets\Scripts\InteraktivMenuScripts\IconZiehen.cs" />
      <Compile Include="Assets\Scripts\InteraktivMenuScripts\InteraktivList.cs" />

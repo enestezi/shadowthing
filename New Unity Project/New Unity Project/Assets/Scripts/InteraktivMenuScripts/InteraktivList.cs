@@ -20,6 +20,8 @@ public class InteraktivList : MonoBehaviour {
 	public List<GameObject> halterList = new List<GameObject>();
 	public List<GameObject> iconList = new List<GameObject>();
 
+	public bool geklickt = false;
+
 	void Start()
 	{
 		objDatenbank = ObjektDatenbank.Instance;
