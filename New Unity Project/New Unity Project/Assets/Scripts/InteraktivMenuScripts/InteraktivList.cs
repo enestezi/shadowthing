@@ -11,7 +11,7 @@ public class InteraktivList : MonoBehaviour {
 	ObjektDatenbank objDatenbank;
 	private int objAnzahl;
 
-	public GameObject figurenPanel;
+	public GameObject iconPanel;
 	public GameObject halterPanel;
 
 	public GameObject halter; 
@@ -27,7 +27,7 @@ public class InteraktivList : MonoBehaviour {
 		objDatenbank = ObjektDatenbank.Instance;
 		objAnzahl = objDatenbank.objekte.Count;
 
-		figurenPanel = GameObject.FindGameObjectWithTag ("iconPanel");
+		iconPanel = GameObject.FindGameObjectWithTag ("iconPanel");
 		halterPanel = GameObject.FindGameObjectWithTag ("halterPanel");
 		halter = Resources.Load<GameObject> ("Prefab/Menu/Halter");
 		icon = Resources.Load<GameObject> ("Prefab/Menu/FigurIcon");

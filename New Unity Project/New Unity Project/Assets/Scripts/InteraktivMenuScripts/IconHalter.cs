@@ -23,15 +23,16 @@ public class IconHalter : MonoBehaviour, IDropHandler
 		} 
 		else if (this.transform.childCount != 0) 
 		{
-			Transform icon = this.transform.GetChild (0);
-			icon.GetComponent<IconZiehen> ().halterNr = dropIcon.halterNr;
-			icon.transform.SetParent (intList.halterList[dropIcon.halterNr].transform);
-			icon.transform.position = intList.halterList [dropIcon.halterNr].transform.position;
+			
+				Transform icon = this.transform.GetChild (0);
+				icon.GetComponent<IconZiehen> ().halterNr = dropIcon.halterNr;
+				icon.transform.SetParent (intList.halterList [dropIcon.halterNr].transform);
+				icon.transform.position = intList.halterList [dropIcon.halterNr].transform.position;
 
-			dropIcon.halterNr = halterNrDrop;
-			dropIcon.transform.SetParent (this.transform);
-			dropIcon.transform.position = this.transform.position;
-
+				dropIcon.halterNr = halterNrDrop;
+				dropIcon.transform.SetParent (this.transform);
+				dropIcon.transform.position = this.transform.position;
+			
 		}
 
 	}

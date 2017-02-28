@@ -58,7 +58,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				iconDaten.AktiviereDaten (objekt);
 				iconDaten.iconDaten.transform.SetParent (this.transform.parent);
 				Vector3 iconPos = this.transform.position;
-				iconPos.x = iconPos.x + 85;
+				iconPos.x = iconPos.x - 60;
+				iconPos.y = iconPos.y + 80;
 				iconDaten.iconDaten.transform.position = iconPos;
 			} 
 		}
