@@ -31,7 +31,6 @@ public class ArchiveList : MonoBehaviour
 		objAnzahl = objDatenbank.objekte.Count;
 
 		intManager = InteraktivManager.Instance;
-		intManager.bereiteFiguren ();
 
 		figurPool = new List<GameObject>();
 		beispielButton = Resources.Load<GameObject> ("Prefab/Menu/BeispielButton");

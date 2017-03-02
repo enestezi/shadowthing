@@ -14,11 +14,14 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	private InteraktivList intList;
 	private IconDaten iconDaten;
 
+	private Vector3 iconPos; 
 
 	void Start () 
 	{
 		intList = GameObject.FindGameObjectWithTag ("menuManager").GetComponent<InteraktivList> ();
 		iconDaten = intList.GetComponent<IconDaten> ();
+
+
 	}
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -37,6 +40,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		if (objekt != null) 
 		{
 			this.transform.position = eventData.position;
+
+
 		}
 	}
 
@@ -57,12 +62,22 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				iconDaten.DeaktiviereDaten ();
 				iconDaten.AktiviereDaten (objekt);
 				iconDaten.iconDaten.transform.SetParent (this.transform.parent);
-				Vector3 iconPos = this.transform.position;
-				iconPos.x = iconPos.x - 60;
-				iconPos.y = iconPos.y + 80;
-				iconDaten.iconDaten.transform.position = iconPos;
+				Vector3 iconDatenPos = this.transform.position;
+				iconDatenPos.x = iconDatenPos.x - 60;
+				iconDatenPos.y = iconDatenPos.y + 80;
+				iconDaten.iconDaten.transform.position = iconDatenPos;
 			} 
 		}
 			
+	}
+
+	void FixedUpdate ()
+	{
+		iconPos = this.transform.position;
+		Debug.Log(iconPos.y);
+		if (iconPos.y >= 200) 
+		{
+			intList.AktiviereFigur (objekt.Signatur);
+		}
 	}
 }

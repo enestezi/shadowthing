@@ -7,6 +7,7 @@ public class IconDaten : MonoBehaviour {
 
 	private LidoObjekt objekt;
 	private string daten;
+
 	public GameObject iconDaten;
 
 	void Start ()
@@ -35,4 +36,5 @@ public class IconDaten : MonoBehaviour {
 		daten = objekt.InhBeschreibung;
 		iconDaten.transform.GetChild(0).GetComponent<Text>().text = daten;
 	}
+
 }
