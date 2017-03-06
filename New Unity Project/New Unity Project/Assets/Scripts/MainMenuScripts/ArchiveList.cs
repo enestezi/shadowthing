@@ -59,6 +59,7 @@ public class ArchiveList : MonoBehaviour
 			figurPool.Add (figur);
 			figur.transform.position = figurPos.position;
 			figur.transform.SetParent (figurPos);
+			intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 			figur.SetActive (false);
 		}
 	}
@@ -85,7 +86,6 @@ public class ArchiveList : MonoBehaviour
 			deaktivierFigur.SetActive (false); // Deaktiviere aktiven Figur
 		
 		aktivFigur.SetActive (true);
-		intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 		deaktivierFigur = aktivFigur;
 	}
 }

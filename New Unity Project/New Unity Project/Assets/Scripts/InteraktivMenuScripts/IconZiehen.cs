@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.UI;
 
 //Objektdaten on icon
 public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
@@ -14,14 +15,18 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	private InteraktivList intList;
 	private IconDaten iconDaten;
 
-	private Vector3 iconPos; 
+	private Vector2 iconPos;
+	private Image iconSprite;
+	private Color iconSpriteColor; 
+
+	private Vector2 posUmgerechnet;
 
 	void Start () 
 	{
 		intList = GameObject.FindGameObjectWithTag ("menuManager").GetComponent<InteraktivList> ();
 		iconDaten = intList.GetComponent<IconDaten> ();
-
-
+		iconSprite = this.GetComponent<Image> ();
+		iconSpriteColor = iconSprite.color;
 	}
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -32,7 +37,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 			this.transform.SetParent (this.transform.parent.parent); //beim drag wird die icon als kind element von eltern von eltern element gesetzt, damit es nicht hinter andere objekte bleibt
 			this.transform.position = eventData.position;
 			GetComponent<CanvasGroup> ().blocksRaycasts = false;
-		}
+
+			}
 	}
 
 	public void OnDrag(PointerEventData eventData)
@@ -41,6 +47,27 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		{
 			this.transform.position = eventData.position;
 
+
+
+			iconPos = this.transform.position;
+
+			// aktiviere Figur usw.
+			if (iconPos.y >= 300) 
+			{
+				intList.AktiviereFigur (objekt.Signatur);
+
+				posUmgerechnet = Camera.main.ScreenToWorldPoint(eventData.position);
+				intList.aktivFigur.GetComponentInChildren<TargetJoint2D>().target = posUmgerechnet;	//TODO: Performance?
+
+				iconSpriteColor.a = 0;
+				iconSprite.color = iconSpriteColor;
+			} 
+			else 
+			{
+				intList.DeaktiviereFigur (objekt.Signatur);
+				iconSpriteColor.a = 1;
+				iconSprite.color = iconSpriteColor;
+			}
 
 		}
 	}
@@ -73,11 +100,6 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	void FixedUpdate ()
 	{
-		iconPos = this.transform.position;
-		Debug.Log(iconPos.y);
-		if (iconPos.y >= 200) 
-		{
-			intList.AktiviereFigur (objekt.Signatur);
-		}
+		
 	}
 }

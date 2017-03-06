@@ -27,8 +27,9 @@ public class InteraktivList : MonoBehaviour {
 	// figur-variablen für puppen
 	public Transform figurPos;
 	public List<GameObject> figurPool;
+	public List<GameObject> aktivFigurPool;
 	public GameObject figur; 
-	public GameObject deaktivierFigur = null;
+	public GameObject aktivFigur;
 
 	void Start()
 	{
@@ -68,6 +69,7 @@ public class InteraktivList : MonoBehaviour {
 			figurPool.Add (figur);
 			figur.transform.position = figurPos.position;
 			figur.transform.SetParent (figurPos);
+			intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 			figur.SetActive (false);
 		}
 
@@ -78,7 +80,7 @@ public class InteraktivList : MonoBehaviour {
 	{
 		for (int i = 0; i < figurPool.Count; i++) 
 		{
-			if (figurPool [i].name == (signatur+"(Clone)")) //TODO:lösche clone
+			if (figurPool [i].name == (signatur+"(Clone)")) //TODO:lösche "clone"
 			{
 				return figurPool [i];
 			}
@@ -86,18 +88,39 @@ public class InteraktivList : MonoBehaviour {
 		return null;
 	}
 
-	public void AktiviereFigur(string aktivSignatur)
+	public GameObject HolePoolAktivFigur(string signatur)
 	{
-		GameObject aktivFigur = HolePoolFigur (aktivSignatur);
+		for (int i = 0; i < aktivFigurPool.Count; i++) 
+		{
+			if (aktivFigurPool [i].name == (signatur+"(Clone)")) //TODO:lösche "clone"
+			{
+				return aktivFigurPool [i];
+			}
+		}
+		return null;
+	}
+
+	public void AktiviereFigur(string aktiviereSignatur)
+	{
+		aktivFigur = HolePoolFigur (aktiviereSignatur);
 
 		if (aktivFigur == null)
 			return;
-		if (deaktivierFigur)
-			deaktivierFigur.SetActive (false); // Deaktiviere aktiven Figur
-
+		
+		aktivFigurPool.Add (aktivFigur);
 		aktivFigur.SetActive (true);
-		intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
-		deaktivierFigur = aktivFigur;
+
+	}
+
+	public void DeaktiviereFigur(string deaktiviereSignatur)
+	{
+		GameObject deaktiviereFigur = HolePoolAktivFigur(deaktiviereSignatur);
+
+		if (deaktiviereFigur == null)
+			return;
+		
+		aktivFigurPool.Remove (deaktiviereFigur);
+		deaktiviereFigur.SetActive (false);
 	}
 
 
