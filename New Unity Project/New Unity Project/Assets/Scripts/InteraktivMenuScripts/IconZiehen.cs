@@ -11,6 +11,7 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	public LidoObjekt objekt;
 	public int halterNr;	//welche halter ist das objekt in
 	public string signaturIcon;
+	public GameObject figur;
 
 	private InteraktivList intList;
 	private IconDaten iconDaten;
@@ -20,6 +21,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	private Color iconSpriteColor; 
 
 	private Vector2 posUmgerechnet;
+
+	public PointerEventData data;
 
 	void Start () 
 	{
@@ -50,6 +53,7 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	{
 		if (objekt != null) 
 		{
+			data = eventData;
 			this.transform.position = eventData.position;
 
 
@@ -62,7 +66,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				intList.AktiviereFigur (objekt.Signatur);
 
 				posUmgerechnet = Camera.main.ScreenToWorldPoint(eventData.position);
-				intList.aktivFigur.GetComponentInChildren<TargetJoint2D>().target = posUmgerechnet;	//TODO: Performance?
+				figur = intList.HolePoolFigur (objekt.Signatur);
+				figur.GetComponentInChildren<TargetJoint2D>().target = posUmgerechnet;	//TODO: Performance?
 
 				iconSpriteColor.a = 0;
 				iconSprite.color = iconSpriteColor;
@@ -102,9 +107,5 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		}
 			
 	}
-
-	void FixedUpdate ()
-	{
 		
-	}
 }

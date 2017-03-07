@@ -15,9 +15,7 @@ public class ObjektGeklickt : MonoBehaviour {
 	public TargetJoint2D tj_geklickt;
 	public Rigidbody2D rb_geklickt;
 	public Rigidbody2D rb_geklickt_interaktiv2;
-	public BaseEventData baseData;
 
-	public string signaturFigur;
 	public IconZiehen iconZiehen; //siehe interaktivList
 
 	// jz public static GameObject lastClickedObject;
@@ -42,6 +40,7 @@ public class ObjektGeklickt : MonoBehaviour {
 
 	void OnMouseDrag ()
 	{
+
 		mausradDreh.Rb_holen(rb_geklickt);
 		tastaturController.Rb_holen (rb_geklickt_interaktiv2);
 		mausZiehen.Ziehen(tj_geklickt);
@@ -62,9 +61,9 @@ public class ObjektGeklickt : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("hintergrund")) 
 		{
-			gameObject.SetActive (false);
-			PointerEventData pointerData = baseData as PointerEventData; // TODO: :(
-			iconZiehen.OnBeginDrag (pointerData);
+			this.gameObject.SetActive (false);
+
+			iconZiehen.OnDrag (iconZiehen.data); //eventData wird zurückgeschickt, da die funktion es braucht
 		}
 	}
 
