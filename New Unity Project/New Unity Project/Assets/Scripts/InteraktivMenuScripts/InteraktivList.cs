@@ -70,6 +70,8 @@ public class InteraktivList : MonoBehaviour {
 			figur.transform.position = figurPos.position;
 			figur.transform.SetParent (figurPos);
 			intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
+			figur.GetComponentInChildren<ObjektGeklickt>().signaturFigur = objDatenbank.objekte[i].Signatur;
+			figur.GetComponentInChildren<ObjektGeklickt> ().iconZiehen = iconList [i].GetComponent<IconZiehen> ();
 			figur.SetActive (false);
 		}
 

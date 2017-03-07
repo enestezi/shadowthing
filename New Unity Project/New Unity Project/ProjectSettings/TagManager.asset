@@ -17,6 +17,7 @@ TagManager:
   - iconPanel
   - menuManager
   - iconDaten
+  - hintergrund
   layers:
   - Default
   - TransparentFX

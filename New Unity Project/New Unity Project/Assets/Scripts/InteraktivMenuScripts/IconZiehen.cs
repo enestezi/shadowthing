@@ -10,7 +10,7 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 {
 	public LidoObjekt objekt;
 	public int halterNr;	//welche halter ist das objekt in
-
+	public string signaturIcon;
 
 	private InteraktivList intList;
 	private IconDaten iconDaten;
@@ -27,18 +27,23 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		iconDaten = intList.GetComponent<IconDaten> ();
 		iconSprite = this.GetComponent<Image> ();
 		iconSpriteColor = iconSprite.color;
+		signaturIcon = objekt.Signatur;
 	}
 
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 		if (objekt != null) 
 		{
+			iconSpriteColor.a = 1;
+			iconSprite.color = iconSpriteColor;
+
 			iconDaten.DeaktiviereDaten ();
 			this.transform.SetParent (this.transform.parent.parent); //beim drag wird die icon als kind element von eltern von eltern element gesetzt, damit es nicht hinter andere objekte bleibt
 			this.transform.position = eventData.position;
 			GetComponent<CanvasGroup> ().blocksRaycasts = false;
-
-			}
+			iconSpriteColor.a = 1;
+			iconSprite.color = iconSpriteColor;
+		}
 	}
 
 	public void OnDrag(PointerEventData eventData)
