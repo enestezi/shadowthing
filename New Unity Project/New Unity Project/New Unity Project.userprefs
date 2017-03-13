@@ -2,13 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteraktivScripts/ObjektGeklickt.cs">
     <Files>
-      <File FileName="Assets/Scripts/MainMenuScripts/ArchiveList.cs" Line="46" Column="79" />
-      <File FileName="Assets/Scripts/InteraktivMenuScripts/InteraktivList.cs" Line="74" Column="1" />
-      <File FileName="Assets/Scripts/InteraktivMenuScripts/IconZiehen.cs" Line="13" Column="29" />
+      <File FileName="Assets/Scripts/MainMenuScripts/ArchiveList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteraktivMenuScripts/InteraktivList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteraktivMenuScripts/IconZiehen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteraktivScripts/ObjektGeklickt.cs" Line="60" Column="34" />
+      <File FileName="Assets/Scripts/InteraktivScripts/MausZiehen.cs" Line="14" Column="1" />
       <File FileName="Assets/Scripts/InteraktivScripts/InteraktivManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/InteraktivMenuScripts/IconDaten.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/InteraktivScripts/ObjektGeklickt.cs" Line="9" Column="2" />
-      <File FileName="Assets/Scripts/InteraktivScripts/MausZiehen.cs" Line="7" Column="49" />
+      <File FileName="Assets/Scripts/InteraktivMenuScripts/IconHalter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Datenbank/LidoWrap.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

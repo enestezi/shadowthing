@@ -110,7 +110,7 @@ public class InteraktivList : MonoBehaviour {
 			return;
 		
 		aktivFigurPool.Add (aktivFigur);
-		aktivFigur.SetActive (true);
+		aktivFigur.SetActiveRecursively (true);
 
 	}
 

@@ -61,8 +61,7 @@ public class ObjektGeklickt : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("hintergrund")) 
 		{
-			this.gameObject.SetActive (false);
-
+			if(iconZiehen != null)
 			iconZiehen.OnDrag (iconZiehen.data); //eventData wird zurückgeschickt, da die funktion es braucht
 		}
 	}

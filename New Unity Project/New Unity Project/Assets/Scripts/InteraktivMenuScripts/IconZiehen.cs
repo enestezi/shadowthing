@@ -53,8 +53,9 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	{
 		if (objekt != null) 
 		{
+			Debug.Log (eventData.position);
 			data = eventData;
-			this.transform.position = eventData.position;
+
 
 
 
@@ -72,8 +73,9 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 				iconSpriteColor.a = 0;
 				iconSprite.color = iconSpriteColor;
 			} 
-			else 
+			else if (iconPos.y <= 300)
 			{
+				this.transform.position = eventData.position;
 				intList.DeaktiviereFigur (objekt.Signatur);
 				iconSpriteColor.a = 1;
 				iconSprite.color = iconSpriteColor;
