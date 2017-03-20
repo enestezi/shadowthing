@@ -40,13 +40,13 @@ public class ObjektGeklickt : MonoBehaviour {
 
 	void OnMouseDrag ()
 	{
-
 		mausradDreh.Rb_holen(rb_geklickt);
 		tastaturController.Rb_holen (rb_geklickt_interaktiv2);
 		mausZiehen.Ziehen(tj_geklickt);
 
 		// TODO: if menu is on
 		hintergrundMenu.enabled = true;
+		iconZiehen.canvasGr.blocksRaycasts = false; //TODO: ist nötig?
 
 		// jz ObjektGeklickt.lastClickedObject = this.gameObject;
 	}
@@ -61,8 +61,12 @@ public class ObjektGeklickt : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("hintergrund")) 
 		{
-			if(iconZiehen != null)
-			iconZiehen.OnDrag (iconZiehen.data); //eventData wird zurückgeschickt, da die funktion es braucht
+			if (iconZiehen != null)
+			{
+				iconZiehen.canvasGr.blocksRaycasts = true; //TODO: ist nötig?
+
+				iconZiehen.OnDrag (iconZiehen.data); //eventData wird zurückgeschickt, da die funktion es braucht
+			}
 		}
 	}
 

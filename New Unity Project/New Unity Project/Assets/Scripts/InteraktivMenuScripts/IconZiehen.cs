@@ -6,10 +6,10 @@ using System;
 using UnityEngine.UI;
 
 //Objektdaten on icon
-public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class IconZiehen : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-	public LidoObjekt objekt;
-	public int halterNr;	//welche halter ist das objekt in
+	public LidoObjekt objekt;	//siehe interaktivList
+	public int halterNr;	//siehe interaktivList //welche halter ist das objekt in
 	public string signaturIcon;
 	public GameObject figur;
 
@@ -24,6 +24,8 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	public PointerEventData data;
 
+	public CanvasGroup canvasGr;
+
 	void Start () 
 	{
 		intList = GameObject.FindGameObjectWithTag ("menuManager").GetComponent<InteraktivList> ();
@@ -31,6 +33,13 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 		iconSprite = this.GetComponent<Image> ();
 		iconSpriteColor = iconSprite.color;
 		signaturIcon = objekt.Signatur;
+		canvasGr = GetComponent<CanvasGroup> ();
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+		data = eventData;
+		this.transform.position = eventData.position;
 	}
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -43,7 +52,7 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 			iconDaten.DeaktiviereDaten ();
 			this.transform.SetParent (this.transform.parent.parent); //beim drag wird die icon als kind element von eltern von eltern element gesetzt, damit es nicht hinter andere objekte bleibt
 			this.transform.position = eventData.position;
-			GetComponent<CanvasGroup> ().blocksRaycasts = false;
+			canvasGr.blocksRaycasts = false;
 			iconSpriteColor.a = 1;
 			iconSprite.color = iconSpriteColor;
 		}
@@ -51,21 +60,17 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 	public void OnDrag(PointerEventData eventData)
 	{
+		
 		if (objekt != null) 
 		{
-			Debug.Log (eventData.position);
-			data = eventData;
-
-
-
-
 			iconPos = this.transform.position;
+			this.transform.position = eventData.position;
 
 			// aktiviere Figur usw.
 			if (iconPos.y >= 300) 
 			{
 				intList.AktiviereFigur (objekt.Signatur);
-
+				this.transform.position = eventData.position;
 				posUmgerechnet = Camera.main.ScreenToWorldPoint(eventData.position);
 				figur = intList.HolePoolFigur (objekt.Signatur);
 				figur.GetComponentInChildren<TargetJoint2D>().target = posUmgerechnet;	//TODO: Performance?
@@ -88,7 +93,7 @@ public class IconZiehen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 	{
 		this.transform.SetParent (intList.halterList [halterNr].transform);	// nach drag zurück zum ursprungliche parent
 		this.transform.position = intList.halterList [halterNr].transform.position;
-		GetComponent<CanvasGroup> ().blocksRaycasts = true;
+		canvasGr.blocksRaycasts = true;
 	}
 
 	public void OnPointerClick(PointerEventData eventData)

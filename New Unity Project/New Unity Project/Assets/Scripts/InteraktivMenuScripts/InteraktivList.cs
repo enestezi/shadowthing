@@ -71,7 +71,7 @@ public class InteraktivList : MonoBehaviour {
 			figur.transform.SetParent (figurPos);
 			intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 
-			figur.GetComponentInChildren<ObjektGeklickt> ().iconZiehen = iconList [i].GetComponent<IconZiehen> ();
+			figur.GetComponentInChildren<ObjektGeklickt> ().iconZiehen = iconList [i].GetComponent<IconZiehen> (); //iconziehen script wird mimt dem jeweiligen objektgeklickt script gekoppelt
 			figur.SetActive (false);
 		}
 
@@ -127,7 +127,6 @@ public class InteraktivList : MonoBehaviour {
 
 
 	public void zuruck(){
-		Debug.Log ("sfdad");
 		SceneManager.LoadScene (0);
 	}
 }
