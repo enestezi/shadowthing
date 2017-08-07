@@ -61,13 +61,13 @@ public class ObjektGeklickt : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("hintergrund")) 
 		{
-			if (iconZiehen != null)
-			{
-				iconZiehen.canvasGr.blocksRaycasts = true; //TODO: ist nötig?
-
-				iconZiehen.OnDrag (iconZiehen.data); //eventData wird zurückgeschickt, da die funktion es braucht
-			}
+			iconZiehen.gameObject.transform.position = Input.mousePosition;
+			iconZiehen.intList.DeaktiviereFigur (iconZiehen.objekt.Signatur);
+			iconZiehen.iconSpriteColor.a = 1;
+			iconZiehen.iconSprite.color = iconZiehen.iconSpriteColor;
+			iconZiehen.gameObject.transform.SetParent (iconZiehen.intList.halterList [iconZiehen.halterNr].transform);	// nach drag zurück zum ursprungliche parent
+			iconZiehen.gameObject.transform.position = iconZiehen.intList.halterList [iconZiehen.halterNr].transform.position;
+			iconZiehen.canvasGr.blocksRaycasts = true;
 		}
 	}
-
 }
