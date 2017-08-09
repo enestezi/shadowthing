@@ -59,9 +59,17 @@
      <Compile Include="Assets\Scripts\MenuScripts\ArchiveList.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\BeispielButton.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\ObjektGeklickt.cs" />
+     <Compile Include="Assets\Scripts\ReSkinAnimation.cs" />
+     <Compile Include="Assets\Scripts\ScrollRectSnap_CS.cs" />
+     <Compile Include="Assets\Scripts\TastaturController.cs" />
+     <Compile Include="Assets\Scripts\ZerbrechlichJoint.cs" />
      <Compile Include="Assets\Scripts\experiment\CoM.cs" />
      <Compile Include="Assets\Scripts\experiment\EventManager.cs" />
      <Compile Include="Assets\Scripts\experiment\grenze.cs" />
+     <Compile Include="Assets\Scripts\grenze.cs" />
+     <Compile Include="Assets\Scripts\mausradDreh.cs" />
+     <Compile Include="Assets\Scripts\ziehenController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
