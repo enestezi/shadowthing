@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 2ab0158cd7ee043b2b7293c721be5885
+timeCreated: 1480955253
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UnityKaragoz2_0
+    21300002: UnityKaragoz2_1
+    21300004: UnityKaragoz2_2
+    21300006: UnityKaragoz2_3
+    21300008: UnityKaragoz2_4
+    21300010: UnityKaragoz2_5
+    21300012: UnityKaragoz2_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UnityKaragoz2_0
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 3602
+        width: 978
+        height: 670
+      alignment: 9
+      pivot: {x: 0.3028824, y: 0.09580442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_1
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 2646
+        width: 977
+        height: 1081
+      alignment: 9
+      pivot: {x: 0.7959789, y: 0.66135144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1953
+        width: 1055
+        height: 520
+      alignment: 9
+      pivot: {x: 0.4260376, y: 0.40290385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_3
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 2394
+        width: 249
+        height: 404
+      alignment: 9
+      pivot: {x: 0.5184336, y: 0.8522061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_4
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1640
+        width: 729
+        height: 822
+      alignment: 9
+      pivot: {x: 0.7203709, y: 0.90204585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_5
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 669
+        width: 544
+        height: 985
+      alignment: 9
+      pivot: {x: 0.66875076, y: 0.93337315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UnityKaragoz2_6
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 520
+        width: 482
+        height: 986
+      alignment: 9
+      pivot: {x: 0.24288245, y: 0.9329335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
