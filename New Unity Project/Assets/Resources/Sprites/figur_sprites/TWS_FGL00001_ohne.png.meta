@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 315db64f28cb74e248975d737888cd82
-timeCreated: 1489404969
+timeCreated: 1506594462
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,7 +12,6 @@ TextureImporter:
     21300010: TWS_FGL00001_ohne_5
     21300012: TWS_FGL00001_ohne_6
     21300014: TWS_FGL00001_ohne_7
-    21300016: TWS_FGL00001_ohne_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -82,12 +81,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 1617
-        width: 686
-        height: 425
-      alignment: 9
-      pivot: {x: 0.32234827, y: 0.09854923}
+        x: 293
+        y: 2128
+        width: 688
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -95,12 +94,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_1
       rect:
         serializedVersion: 2
-        x: 928
-        y: 1702
-        width: 214
-        height: 172
+        x: 1152
+        y: 1955
+        width: 219
+        height: 173
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -108,9 +107,9 @@ TextureImporter:
       name: TWS_FGL00001_ohne_2
       rect:
         serializedVersion: 2
-        x: 1145
-        y: 1797
-        width: 4
+        x: 1368
+        y: 2050
+        width: 5
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,10 +120,10 @@ TextureImporter:
       name: TWS_FGL00001_ohne_3
       rect:
         serializedVersion: 2
-        x: 1141
-        y: 1773
-        width: 5
-        height: 11
+        x: 116
+        y: 1195
+        width: 864
+        height: 763
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,12 +133,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_4
       rect:
         serializedVersion: 2
-        x: 39
-        y: 824
-        width: 653
-        height: 763
-      alignment: 9
-      pivot: {x: 0.81896645, y: 0.6335868}
+        x: 1152
+        y: 1096
+        width: 479
+        height: 738
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -147,12 +146,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_5
       rect:
         serializedVersion: 2
-        x: 910
-        y: 867
-        width: 479
-        height: 738
-      alignment: 9
-      pivot: {x: 0.6, y: 0.5}
+        x: 85
+        y: 471
+        width: 570
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -160,12 +159,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_6
       rect:
         serializedVersion: 2
-        x: 188
-        y: 210
-        width: 569
-        height: 556
+        x: 763
+        y: 177
+        width: 428
+        height: 691
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -173,25 +172,12 @@ TextureImporter:
       name: TWS_FGL00001_ohne_7
       rect:
         serializedVersion: 2
-        x: 836
-        y: 67
-        width: 426
-        height: 691
-      alignment: 9
-      pivot: {x: 0.7, y: 0.49999997}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: TWS_FGL00001_ohne_8
-      rect:
-        serializedVersion: 2
-        x: 1284
-        y: 38
+        x: 1262
+        y: 125
         width: 383
-        height: 689
-      alignment: 9
-      pivot: {x: 0.7, y: 0.5}
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

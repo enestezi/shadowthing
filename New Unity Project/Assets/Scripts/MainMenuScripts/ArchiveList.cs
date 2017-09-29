@@ -49,7 +49,6 @@ public class ArchiveList : MonoBehaviour
 			button.titel.text = objDatenbank.objekte [i].Titel;
 			button.beschreibung.text = objDatenbank.objekte [i].Beschreibung;
 			neuButton.transform.SetParent (inhaltPanel.transform);
-
 			string objSignatur;
 			objSignatur = objDatenbank.objekte [i].Signatur;
 			neuButton.GetComponent<Button> ().onClick.AddListener (() => {AktiviereFigur(objSignatur);});
@@ -60,9 +59,11 @@ public class ArchiveList : MonoBehaviour
 			figurPool.Add (figur);
 			figur.transform.position = figurPos.position;
 			figur.transform.SetParent (figurPos);
+
 			intManager.bereiteFiguren(); //singleton wurde in function gelagert damit es mehr als einmal afgerufen werden kann
 			figur.SetActive (false);
 		}
+		figurPos.localScale += new Vector3(0.50F,0.50F, 0.50F);
 	}
 
 	public GameObject HolePoolFigur(string signatur)

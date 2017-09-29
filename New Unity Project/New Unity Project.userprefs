@@ -1,11 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InteraktivScripts\Interaktiv1Parent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InteraktivScripts\ObjektGeklickt.cs">
     <Files>
-      <File FileName="Assets\Scripts\InteraktivScripts\ObjektGeklickt.cs" Line="64" Column="41" />
-      <File FileName="Assets\Scripts\InteraktivScripts\ReSkinAnimation.cs" Line="39" Column="4" />
+      <File FileName="Assets\Scripts\InteraktivScripts\ObjektGeklickt.cs" Line="75" Column="1" />
+      <File FileName="Assets\Scripts\InteraktivScripts\ReSkinAnimation.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\experiment\EventManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InteraktivScripts\Interaktiv1Parent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Datenbank\TWS_SPF.xml" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\InteraktivScripts\ZerbrechlichJoint.cs" Line="20" Column="40" />
+      <File FileName="Assets\Scripts\InteraktivScripts\InteraktivManager.cs" Line="37" Column="1" />
+      <File FileName="Assets\Scripts\MainMenuScripts\ArchiveList.cs" Line="66" Column="56" />
+      <File FileName="Assets\Scripts\Datenbank\ObjDatenbank.cs" Line="76" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
