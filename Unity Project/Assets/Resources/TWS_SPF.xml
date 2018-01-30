@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lidoWrap>
+   <lido:lido xmlns:lido="http://www.lido-schema.org"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd">
+      <lido:lidoRecID lido:source="Theaterwissenschaftliche Sammlung, Universität zu Köln"
+         lido:type="local">TWS_SPF00001</lido:lidoRecID>
+      <lido:category>
+         <lido:conceptID lido:type="AAT"/>
+         <lido:term xml:lang="de">Einzelobjekt</lido:term>
+      </lido:category>
+      <lido:descriptiveMetadata xml:lang="de">
+         <lido:objectClassificationWrap>
+            <lido:objectWorkTypeWrap>
+               <lido:objectWorkType>
+                  <lido:conceptID lido:type="AAT">300211230</lido:conceptID>
+                  <lido:term lido:addedSearchTerm="yes"
+                     lido:encodinganalog="300211230">Figur</lido:term>
+               </lido:objectWorkType>
+            </lido:objectWorkTypeWrap>
+            <lido:classificationWrap>
+               <lido:classification lido:type="AAT:type">
+                  <lido:conceptID lido:type="AAT:type">300211230</lido:conceptID>
+                  <lido:term lido:addedSearchTerm="yes">Schattenspielfigur</lido:term>
+               </lido:classification>
+            </lido:classificationWrap>
+         </lido:objectClassificationWrap>
+         <lido:objectIdentificationWrap>
+            <lido:titleWrap>
+               <lido:titleSet>
+                  <lido:appellationValue lido:pref="preferred"
+                     xml:lang="de">Karagöz</lido:appellationValue>
+               </lido:titleSet>
+            </lido:titleWrap>
+            <lido:repositoryWrap>
+               <lido:repositorySet lido:type="current">
+                  <lido:repositoryName>
+                     <lido:legalBodyName>
+                        <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
+                     </lido:legalBodyName>
+                  </lido:repositoryName>
+                  <lido:workID lido:type="inventory number"/>
+                  <lido:repositoryLocation>
+                     <lido:namePlaceSet>
+                        <lido:appellationValue>Schattenspielsammlung</lido:appellationValue>
+                     </lido:namePlaceSet>
+                  </lido:repositoryLocation>
+               </lido:repositorySet>
+            </lido:repositoryWrap>
+            <lido:objectDescriptionWrap>
+               <lido:objectDescriptionSet>
+                  <lido:descriptiveNoteValue>türkische Schattenspielfiguraus Leder, einzelne Elemente am Hut, Jacke und Schuhen sind rot gefärbt.7-teilig, ein Loch an Schulter, eines am Handgelenk zur Aufnahme der Steuerstöcke</lido:descriptiveNoteValue>
+               </lido:objectDescriptionSet>
+            </lido:objectDescriptionWrap>
+            <lido:objectMeasurementsWrap>
+               <lido:objectMeasurementsSet>
+                  <lido:objectMeasurements>
+                     <lido:measurementsSet>
+                        <lido:measurementType>HxB</lido:measurementType>
+                        <lido:measurementUnit>cm</lido:measurementUnit>
+                        <lido:measurementValue>31x11</lido:measurementValue>
+                     </lido:measurementsSet>
+                  </lido:objectMeasurements>
+               </lido:objectMeasurementsSet>
+            </lido:objectMeasurementsWrap>
+         </lido:objectIdentificationWrap>
+         <lido:eventWrap>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Herstellung</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Performance</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent>Für die Hamburger Aufführung konnte Niessen auf eigene umfangreiche Karagöz-Bestände zurückgreifen, die er bereits 1926 erworben hatte. Der Orientalist und Turkologe Theodor Menzel (1878-1939), der wie Georg Jacob in Kiel lehrte und 1929 dessen Nachfolger am orientalischen Institut werden sollte, hatte Niessen seinerzeit den Kontakt zu einem Figurenverkäufer in Istanbul vermittelt und dem Kölner Institut auf diese Weise den Erwerb von rund 100 Figuren ermöglicht. (Vgl. Menzel an Niessen (Telegr.), 5.2.1926 sowie Niessen an Eckert, 8.2.1926 beide UAK Zug. 9/274.)</lido:displayEvent>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Provenienz</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term>Kleinasien</lido:term>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate>1926</lido:earliestDate>
+                        <lido:latestDate>1926</lido:latestDate>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+         </lido:eventWrap>
+         <lido:objectRelationWrap>
+            <lido:subjectWrap>
+               <lido:subjectSet>
+                  <lido:displaySubject>Karagöz ist ein lebensfroher, einfacher, aber witzig-gerissener Mann aus dem Volk. Er ist eine ungehobelte, sinnenfreudige Figur, die aus Geldmangel häufig Aufgaben übernehmen muss, denen sie nicht gewachsen ist (wiki)</lido:displaySubject>
+                  <lido:subject>
+                     <lido:subjectDate>
+                        <lido:displayDate>[frühestens] - [spätestens]</lido:displayDate>
+                     </lido:subjectDate>
+                  </lido:subject>
+               </lido:subjectSet>
+            </lido:subjectWrap>
+         </lido:objectRelationWrap>
+      </lido:descriptiveMetadata>
+      <lido:administrativeMetadata xml:lang="de">
+         <lido:recordWrap>
+            <lido:recordID lido:type="local"/>
+            <lido:recordType>
+               <lido:term>Einzelobjekt</lido:term>
+            </lido:recordType>
+            <lido:recordSource>
+               <lido:legalBodyName>
+                  <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
+               </lido:legalBodyName>
+            </lido:recordSource>
+         </lido:recordWrap>
+      </lido:administrativeMetadata>
+   </lido:lido>
+   <lido:lido xmlns:lido="http://www.lido-schema.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd">
+      <lido:lidoRecID lido:source="Theaterwissenschaftliche Sammlung, Universität zu Köln"
+         lido:type="local">TWS_SPF00003</lido:lidoRecID>
+      <lido:category>
+         <lido:conceptID lido:type="AAT"/>
+         <lido:term xml:lang="de">Einzelobjekt</lido:term>
+      </lido:category>
+      <lido:descriptiveMetadata xml:lang="de">
+         <lido:objectClassificationWrap>
+            <lido:objectWorkTypeWrap>
+               <lido:objectWorkType>
+                  <lido:conceptID lido:type="AAT">300211230</lido:conceptID>
+                  <lido:term lido:addedSearchTerm="yes"
+                     lido:encodinganalog="300211230">Figur</lido:term>
+               </lido:objectWorkType>
+            </lido:objectWorkTypeWrap>
+            <lido:classificationWrap>
+               <lido:classification lido:type="AAT:type">
+                  <lido:conceptID lido:type="AAT:type">300211230</lido:conceptID>
+                  <lido:term lido:addedSearchTerm="yes">Schattenspielfigur</lido:term>
+               </lido:classification>
+            </lido:classificationWrap>
+         </lido:objectClassificationWrap>
+         <lido:objectIdentificationWrap>
+            <lido:titleWrap>
+               <lido:titleSet>
+                  <lido:appellationValue lido:pref="preferred"
+                     xml:lang="de">Frenk</lido:appellationValue>
+               </lido:titleSet>
+            </lido:titleWrap>
+            <lido:repositoryWrap>
+               <lido:repositorySet lido:type="current">
+                  <lido:repositoryName>
+                     <lido:legalBodyName>
+                        <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
+                     </lido:legalBodyName>
+                  </lido:repositoryName>
+                  <lido:workID lido:type="inventory number"/>
+                  <lido:repositoryLocation>
+                     <lido:namePlaceSet>
+                        <lido:appellationValue>Schattenspielsammlung</lido:appellationValue>
+                     </lido:namePlaceSet>
+                  </lido:repositoryLocation>
+               </lido:repositorySet>
+            </lido:repositoryWrap>
+            <lido:objectDescriptionWrap>
+               <lido:objectDescriptionSet>
+                  <lido:descriptiveNoteValue>türkische Schattenspielfigur aus Leder, überwiegend braun gefärbt, auf allen Kleidungsstücken ist außerdem ein Karomuster zu erkennen.</lido:descriptiveNoteValue>
+               </lido:objectDescriptionSet>
+            </lido:objectDescriptionWrap>
+            <lido:objectMeasurementsWrap>
+               <lido:objectMeasurementsSet>
+                  <lido:objectMeasurements>
+                     <lido:measurementsSet>
+                        <lido:measurementType>HxB</lido:measurementType>
+                        <lido:measurementUnit>cm</lido:measurementUnit>
+                        <lido:measurementValue>31x11</lido:measurementValue>
+                     </lido:measurementsSet>
+                  </lido:objectMeasurements>
+               </lido:objectMeasurementsSet>
+            </lido:objectMeasurementsWrap>
+         </lido:objectIdentificationWrap>
+         <lido:eventWrap>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Herstellung</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent/>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Performance</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term/>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate/>
+                        <lido:latestDate/>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+            <lido:eventSet>
+               <lido:displayEvent>Für die Hamburger Aufführung konnte Niessen auf eigene umfangreiche Karagöz-Bestände zurückgreifen, die er bereits 1926 erworben hatte. Der Orientalist und Turkologe Theodor Menzel (1878-1939), der wie Georg Jacob in Kiel lehrte und 1929 dessen Nachfolger am orientalischen Institut werden sollte, hatte Niessen seinerzeit den Kontakt zu einem Figurenverkäufer in Istanbul vermittelt und dem Kölner Institut auf diese Weise den Erwerb von rund 100 Figuren ermöglicht. (Vgl. Menzel an Niessen (Telegr.), 5.2.1926 sowie Niessen an Eckert, 8.2.1926 beide UAK Zug. 9/274.)</lido:displayEvent>
+               <lido:event>
+                  <lido:eventType>
+                     <lido:term>Provenienz</lido:term>
+                  </lido:eventType>
+                  <lido:eventActor></lido:eventActor>
+                  <lido:culture>
+                     <lido:term>Kleinasien</lido:term>
+                  </lido:culture>
+                  <lido:eventDate>
+                     <lido:date>
+                        <lido:earliestDate>1926</lido:earliestDate>
+                        <lido:latestDate>1926</lido:latestDate>
+                     </lido:date>
+                  </lido:eventDate>
+               </lido:event>
+            </lido:eventSet>
+         </lido:eventWrap>
+         <lido:objectRelationWrap>
+            <lido:subjectWrap>
+               <lido:subjectSet>
+                  <lido:displaySubject>Frenk ist ein nichtmuslimischer Charakter, meist östlicher Christ. Hier trägt er vermutlich einen englischen Anzug.</lido:displaySubject>
+                  <lido:subject>
+                     <lido:subjectDate>
+                        <lido:displayDate>[frühestens] - [spätestens]</lido:displayDate>
+                     </lido:subjectDate>
+                  </lido:subject>
+               </lido:subjectSet>
+            </lido:subjectWrap>
+         </lido:objectRelationWrap>
+      </lido:descriptiveMetadata>
+      <lido:administrativeMetadata xml:lang="de">
+         <lido:recordWrap>
+            <lido:recordID lido:type="local"/>
+            <lido:recordType>
+               <lido:term>Einzelobjekt</lido:term>
+            </lido:recordType>
+            <lido:recordSource>
+               <lido:legalBodyName>
+                  <lido:appellationValue>Theaterwissenschaftliche Sammlung, Universität zu Köln</lido:appellationValue>
+               </lido:legalBodyName>
+            </lido:recordSource>
+         </lido:recordWrap>
+      </lido:administrativeMetadata>
+   </lido:lido>
+</lidoWrap>
